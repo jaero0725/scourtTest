@@ -15,7 +15,7 @@
 ## 개발환경
 - 반응형 x, 모바일 화면만 구현 
 - 개발언어 : html, css, javascript 
-- 서버 : netlify
+- 정적서버 : netlify
 
 ## 개발기간 
 
