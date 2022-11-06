@@ -1,63 +1,124 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>국민참여재판 </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 </head>
-<body class="container">
-    <div class="row" style="background-color:seagreen; position:fixed;" >
-        <div class="col-lg-3" style="background-color:skyblue">
-            Fixed content
-        </div>
-        <div class="col-lg-3" style="background-color:darkkhaki">
-            normal sccc
-        </div>
-    </div>
-    
-    <div class="d-block p-3 text-bg-dark" style="background-color:yellow">
-        대법원 국민재판 테스트
-    </div>
-    <div class="d-block p-3" style="background-color:green">
-        ZEROCO X 대법원
-    </div>
-    
-    <div class="main">
-       
-        <article class="start">
-            <h1 class="mt-5 text-center">대법원 국민재판 참여 국민편2</h1>
-            <button type="button" class="btn btn-primary mt-5" onclick='start();'>배심원편</button>
-            <button type="button" class="btn btn-primary mt-5" onclick='start();'>국민편</button>
-        </article>
-    
-        <div class="main_qna">
-            <article class="question">
-                <div class="progress mt-5">
-                    <div class="progress-bar" role="progressbar" style="width: calc(100/5*1%)"></div>
-                </div>
-                <h2 id="title" class="text-center mt-5">문제</h2>
-                <input id="type" type="hidden" value="EI">
-                <button id="A" type="button" class="btn btn-primary mt-5">Primary</button>
-                <button id="B" type="button" class="btn btn-primary mt-5">Primary</button>
-            </article>
 
-            <article class="result">
-                <img id="img" class="rounded-circle mt-5" src="lion.jpg" alt="결과">
-                <h2 id="moneytype" class="text-center mt-5">유형</h2>
-                <h3 id="explain" class="text-center mt-5">설명</h3>
-            </article>
+<body>
+    <div id="__next">
+        <div class="Toastify"></div>
+        <div class="common_container__1nqD_">
+            <div></div>
+            <div class="custom-comment-op-handler"></div>
+            <div class="custom-comment-op-handler"></div>
+
+            <!-- 배경 -->
+            <div style="position:fixed;left:50%;top:0;bottom:0;transform:translateX(-50%); max-width: 500px; background-repeat: no-repeat;
+            background-position: center center;
+            background-color :rgb(247, 247, 245);  background-size: 100%;">
+            <!-- 배경 end-->
+
+            <div style="position: relative; flex: 1 1 0%;">
+                <div style="width:100%; margin-top: 0px; padding-bottom: 34px; overflow: auto;  min-height: 100vh; 
+                    overflow:scroll; overflow-x:hidden;">
+                    
+                    <!-- 고정 헤더 -->
+                    <div style="position: fixed; width: 500px; height: 40px; transform: translateX(-50%) scale(1); transform-origin: center top; left: 50%; z-index: 1;">
+                        <!-- 로고 -->
+                        <div style="height: 50px; background-color: rgb(199, 176, 155); text-align: center; display: flex; align-items: center;">
+                            <div class="app-logo"
+                                style="height: 40px; margin: 0px auto; background-color: transparent; text-align: center; max-width: 200px;">
+                                <img alt="logo" src="/images/logo.png"
+                                    style="height:100%; width: 100%;; position: relative; left: 50%; transform: translateX(-50%);">
+                            </div>
+                        </div>
+                        <!-- 로고 end-->
+                        <!-- 프로그레스 바-->
+                        <div class="progress-bar_progress-bar" style="height: 6px;">
+                            <div class="progress-bar_percent-gauge__6wI6a"
+                                style="width: 15.3846%; background-color: rgb(0, 54, 104);"></div>
+                        </div>
+                        <!--프로그레스 바 end-->
+                    </div>
+                    <!-- 고정 헤더 end-->
+
+                    <!-- 컨텐츠 -->
+                    <div class="content" style="height: 300px; width: 500px;"> <!-- 기종 사이즈에 맞춰서 변경 -->
+                            <div class="dummy-header" style="height: 100px;"></div>
+                            <div class="page-slide-wrap">
+                                <div class="page-slide slide-off-enter-done">
+                                    
+                                    <!-- 시작 화면 
+                                    <div class="intro-step" style="display: none;">
+                                        <div class="intro-step_img-box">
+                                            <img src="" style="min-height:24rem" alt="시작 이미지">
+                                        </div>
+                                        <div class="intro-step_btn-wrap">
+                                            <a class="intro-step_btn-game-start" style="background-color:rgb(0, 54, 104);color:#ffffff">시작하기</a>
+                                        </div>
+                                        <div class="share-box_share">
+                                            <div class="share-box_list-title__2V2x2"><span>테스트 공유하기</span>
+                                        </div>
+                                    </div>-->
+                                    <!-- 시작 화면 end -->
+
+                                    <!-- 실제 테스트 진행시 나오는 컨텐츠 -->
+                                    <!-- 질문 & 답변 -->
+                                    <div class="question-step" style="min-height: calc((100vh - 84px) / 1);" >
+                                        <!-- 질문-->
+                                        <h4 class="question-step_question-title" style="margin: 0px 0px 15px; min-height: auto;">
+                                             (1) 당신의 업무스타일은 어떤가요?
+                                        </h4>
+                                        <!-- 질문 관련 img -->
+                                        <img class="question-step_question-image__2DoVN" src="/images/question01.png"  style="display: block; ">
+                                        <!-- 답변 -->
+                                        <div class="question-step_question" style="padding-bottom: 15px; margin: 19px auto 30px;">
+                                            <!-- 답 1 -->
+                                            <button class="viewerButton_question-option"
+                                                style="margin-top: 0px; min-height: 46px; font-size: 16px; background-color: transparent; border: 1px solid rgb(225, 225, 225);">
+                                                <span class="viewerButton_background"
+                                                    style="background-color: rgb(0, 54, 104);"></span>
+                                                    <span style="color: rgb(0, 0, 0);">혼자서 일하는 것을 선호한다.</span>
+                                            </button>
+                                            <!-- 답 2 -->
+                                             <button class="viewerButton_question-option"
+                                                style="margin-top: 0px; min-height: 46px; font-size: 16px; background-color: transparent; border: 1px solid rgb(225, 225, 225);">
+                                                <span class="viewerButton_background" style="background-color: rgb(0, 54, 104);"></span>
+                                                <span style="color: rgb(0, 0, 0);">협력하는 것을 선호한다. </span>
+                                            </button>
+                                        </div>
+                                        <!-- 답변 end-->
+                                    </div>
+                                    <!-- 질문 & 답변 end-->
+                                    <!-- 실제 테스트 진행시 나오는 컨텐츠 -->
+
+                                    <!-- 결과 페이지 -->
+                                    
+                                    <!-- -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 컨텐츠 end-->
+                </div>
+            </div>
         </div>
     </div>
-   
-    <input type="hidden" id="EI" value="0">
-    <input type="hidden" id="SN" value="0">
-    <input type="hidden" id="TF" value="0">
-    <input type="hidden" id="JP" value="0">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
