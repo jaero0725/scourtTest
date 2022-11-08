@@ -12,25 +12,20 @@
 </head>
 
 <body>
-    <div id="__next">
+    <div id="next">
         <div class="Toastify"></div>
-        <div class="common_container__1nqD_">
-            <div></div>
-            <div class="custom-comment-op-handler"></div>
-            <div class="custom-comment-op-handler"></div>
-
+        <div class="common_container">
             <!-- 배경 -->
-            <div style="position:fixed;left:50%;top:0;bottom:0;transform:translateX(-50%); max-width: 500px; background-repeat: no-repeat;
+            <div id ="backgrond" style="position:fixed;left:50%;top:0;bottom:0;transform:translateX(-50%); max-width: 500px; background-repeat: no-repeat;
             background-position: center center;
             background-color :rgb(247, 247, 245);  background-size: 100%;">
-            <!-- 배경 end-->
-
+            
             <div style="position: relative; flex: 1 1 0%;">
                 <div style="width:100%; margin-top: 0px; padding-bottom: 34px; overflow: auto;  min-height: 100vh; 
                     overflow:scroll; overflow-x:hidden;">
                     
                     <!-- 고정 헤더 -->
-                    <div style="position: fixed; width: 500px; height: 40px; transform: translateX(-50%) scale(1); transform-origin: center top; left: 50%; z-index: 1;">
+                    <div id="header" style="position: fixed;  height: 40px; transform: translateX(-50%) scale(1); transform-origin: center top; left: 50%; z-index: 1;">
                         <!-- 로고 -->
                         <div style="height: 50px; background-color: rgb(199, 176, 155); text-align: center; display: flex; align-items: center;">
                             <div class="app-logo"
@@ -50,8 +45,8 @@
                     <!-- 고정 헤더 end-->
 
                     <!-- 컨텐츠 -->
-                    <div class="content" style="height: 300px; width: 500px;"> <!-- 기종 사이즈에 맞춰서 변경 -->
-                            <div class="dummy-header" style="height: 100px;"></div>
+                    <div id="content" class="content" style="height: 250px;max-width: 500px;"> <!-- 기종 사이즈에 맞춰서 변경 -->
+                            <div class="dummy-header" style="height: 100px;max-width: 500px;"></div>
                             <div class="page-slide-wrap">
                                 <div class="page-slide slide-off-enter-done">
                                     
@@ -111,7 +106,43 @@
             </div>
         </div>
     </div>
+    <script>
 
+        // 초기 size 세팅 
+        var x = window.innerWidth;
+        var y = window.innerHeight;
+ 
+        var header    = document.getElementById("header");
+        var backgrond = document.getElementById("backgrond");
+        var content   = document.getElementById("content");
+    
+        if(x <= 500){
+                header.style.width    = x +"px";
+                backgrond.style.width = x +"px";
+                content.style.width   = x +"px";
+        } else{
+            header.style.width = "500px";
+            backgrond.style.width = "500px";
+            content.style.width = "500px";
+        }
+
+        // widow size 변경 시 
+        window.onresize = function() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;	
+            
+            //window 사이즈가 500px 보다 작다면, 
+            if(width <= 500){
+                header.style.width    = width +"px";
+                backgrond.style.width = width +"px";
+                content.style.width   = width +"px";
+            }
+        }
+    
+
+
+
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
