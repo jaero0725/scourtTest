@@ -66,28 +66,31 @@
 
                                     <!-- 실제 테스트 진행시 나오는 컨텐츠 -->
                                     <!-- 질문 & 답변 -->
-                                    <div class="question-step" style="min-height: calc((100vh - 84px) / 1);" >
+                                    <div></div>
+                                    <div class="question-step" style="min-height: calc((100vh - 84px) / 1); position:relative; top:20%;
+                                     margin-left:3rem; margin-right:3rem;" >
                                         <!-- 질문-->
-                                        <h4 class="question-step_question-title" style="margin: 0px 0px 15px; min-height: auto;">
-                                             (1) 당신의 업무스타일은 어떤가요?
-                                        </h4>
+                                        <div id ="question-step_question-title" style="text-align:center;font-size: 1.8rem;padding-left: 1rem; padding-right:1rem;" >
+                                            ① <br>
+                                            당신의 업무스타일은 어떤가요?
+                                        </div>
+                                        <!-- TODO : 가운데 고정 시키기 -->
                                         <!-- 질문 관련 img -->
-                                        <img class="question-step_question-image__2DoVN" src="/images/question01.png"  style="display: block; ">
+                                        <img class="question-step_question-image" src="/images/question01.png"  style="display: block;text-align: center; width: 100%;">
                                         <!-- 답변 -->
                                         <div class="question-step_question" style="padding-bottom: 15px; margin: 19px auto 30px;">
                                             <!-- 답 1 -->
-                                            <button class="viewerButton_question-option"
-                                                style="margin-top: 0px; min-height: 46px; font-size: 16px; background-color: transparent; border: 1px solid rgb(225, 225, 225);">
-                                                <span class="viewerButton_background"
-                                                    style="background-color: rgb(0, 54, 104);"></span>
-                                                    <span style="color: rgb(0, 0, 0);">혼자서 일하는 것을 선호한다.</span>
-                                            </button>
+                                            <div>
+                                                <button class="viewerButton_question-option" style="width:100%; margin-bottom: 1rem;">
+                                                    <span>혼자서 일하는 것을 선호한다.</span>
+                                                </button>
+                                            </div>
+                                            <div>
                                             <!-- 답 2 -->
-                                             <button class="viewerButton_question-option"
-                                                style="margin-top: 0px; min-height: 46px; font-size: 16px; background-color: transparent; border: 1px solid rgb(225, 225, 225);">
-                                                <span class="viewerButton_background" style="background-color: rgb(0, 54, 104);"></span>
-                                                <span style="color: rgb(0, 0, 0);">협력하는 것을 선호한다. </span>
-                                            </button>
+                                                <button class="viewerButton_question-option" style="width:100%; margin-bottom: 1rem;">
+                                                        <span>협력하는 것을 선호한다. </span>
+                                                </button>
+                                            </div>
                                         </div>
                                         <!-- 답변 end-->
                                     </div>
@@ -138,8 +141,6 @@
                 content.style.width   = width +"px";
             }
         }
-    
-
 
 
     </script>
