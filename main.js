@@ -3,11 +3,7 @@
         // questions 진행시 UI 세팅 관련
 
         // 1. 시작할경우 
-        let progressCnt = document.getElementById("progressCnt").val;
-
-        console.log(questions[progressCnt]);
-        console.log(questions[progressCnt].titleImageSrc)
-        $(`#question-step_question-image`).attr({ src: questions[progressCnt].titleImageSrc }); //imageSrc 세팅 
+       
 
 
         var num = 1;

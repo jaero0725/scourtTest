@@ -63,7 +63,7 @@ const results = {
     }
 };
 
-let progressCnt = 1;
+let progressCnt = 2;
 //progressCnt++;
 // 초기 세팅 
 $('#question-step_question-title').attr({ src: questions[progressCnt].questionImageSrc });  // questionImageSrc 세팅

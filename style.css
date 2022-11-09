@@ -32,3 +32,11 @@ article {
     width: 100%;
     height: 100%;
 }
+
+button.answerBtn{ 	
+    border:none
+}
+button.answerBtn:focus{ 	
+    border: none;
+    outline:none;
+}
