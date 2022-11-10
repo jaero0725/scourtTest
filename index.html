@@ -43,56 +43,49 @@
                     </div>
                     <!-- 고정 헤더 end-->
 
-                    <!-- 컨텐츠 -->
+                    <!-- 테스트 컨텐츠 컨텐츠 -->
                     <div id="content" class="content" style="height: 250px;max-width: 500px;"> <!-- 기종 사이즈에 맞춰서 변경 -->
                             <div class="dummy-header" style="height: 100px;max-width: 500px;"></div>
                             <div class="page-slide-wrap">
                                 <div class="page-slide slide-off-enter-done">
-                                    
-                                    <!-- 시작 화면 
-                                    <div class="intro-step" style="display: none;">
-                                        <div class="intro-step_img-box">
-                                            <img src="" style="min-height:24rem" alt="시작 이미지">
-                                        </div>
-                                        <div class="intro-step_btn-wrap">
-                                            <a class="intro-step_btn-game-start" style="background-color:rgb(0, 54, 104);color:#ffffff">시작하기</a>
-                                        </div>
-                                        <div class="share-box_share">
-                                            <div class="share-box_list-title__2V2x2"><span>테스트 공유하기</span>
-                                        </div>
-                                    </div>-->
-                                    <!-- 시작 화면 end -->
-
-                                    <!-- 실제 테스트 진행시 나오는 컨텐츠 -->
-                                    <!-- 질문 & 답변 -->
-                                    <div></div>
-                                    <div class="question-step" style="min-height: calc((100vh - 84px) / 1); position:relative; top:20%;
+                                    <div style="min-height: calc((100vh - 84px) / 1); position:relative; top:20%;
                                      margin-left:3rem; margin-right:3rem;" >
-                                        <!-- 질문
-                                        <div id ="question-step_question-title" style="text-align:center;font-size: 1.8rem;padding-left: 1rem; padding-right:1rem;" >
-                                            ① <br>
-                                            당신의 업무스타일은 어떤가요?
-                                        </div>-->
-                                        <img id="question-step_question-title" style="display: block;text-align: center; width: 100%;">
-                                        <!-- TODO : 가운데 고정 시키기 -->
-                                        <!-- 질문 관련 img -->
-                                        <img id="question-step_question-image" style="display: block;text-align: center; width: 100%;">
-                                        <!-- 답변 -->
-                                        <div class="question-step_question" style="padding-bottom: 15px; margin: 19px auto 30px;">
-                                            <!-- 답 1 -->
-                                            <button type="button" class="answerBtn"><img id="answerAImageSrc" style=" width: 100%;"></button>
-                                            <!-- 답 2 -->
-                                            <button type="button" class="answerBtn"><img id="answerBImageSrc" style=" width: 100%;"></button>
-                                           
-                                        </div>
-                                        <!-- 답변 end-->
-                                    </div>
-                                    <!-- 질문 & 답변 end-->
-                                    <!-- 실제 테스트 진행시 나오는 컨텐츠 -->
 
-                                    <!-- 결과 페이지 -->
-                                    
-                                    <!-- -->
+                                         <!-- [1] Intro Content -->
+                                        <div id="intro_content" >
+                                            <div class="intro-step_img-box">
+                                                <img src="" style="min-height:24rem" alt="시작 이미지">
+                                            </div>
+                                            <button type="button" id="startBtn" style="display: block;text-align: center; width: 100%;" >시작하기</button>
+                                        </div>
+
+                                        <!-- [2] Question Content -->
+                                        <div id="question_content" style="display:none;">
+                                            <img id="question-step_question-title" style="display: block;text-align: center; width: 100%; margin-bottom:1rem;">
+                                            <!-- 질문 관련 img -->
+                                            <img id="question-step_question-image" style="display: block;text-align: center; width: 100%;">
+                                            <!-- 답변 -->
+                                            <div class="question-step_question" style="padding-bottom: 15px; margin: 19px auto 30px;">
+                                                <!-- 답 1 -->
+                                                <button type="button" class="answerBtn" id="answerABtn"><img id="answerAImageSrc" style=" width: 100%;"></button>
+                                                <!-- 답 2 -->
+                                                <button type="button" class="answerBtn" id="answerBBtn"><img id="answerBImageSrc" style=" width: 100%;"></button>
+                                            </div>
+                                            <!-- 답변 end-->
+                                        </div>
+
+                                        <!-- [3] Result Content -->
+                                        <div id="result_content" style="display:none;">
+                                            <img id="result_titleSrc" style="display: block;text-align: center; width: 100%; margin-bottom:1rem;">
+                                            <img id="result_titleImageSrc" style="display: block;text-align: center; width: 100%;">
+                                            <img id="result_contentImageSrc" style="display: block;text-align: center; width: 100%;margin-bottom:0.7rem;">
+                                            <div> 
+                                                <img id="relatedResult01" class="result_relatedResult">
+                                                <img id="relatedResult02" class="result_relatedResult">
+                                                <img id="relatedResult03" class="result_relatedResult">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -104,39 +97,7 @@
     </div>
     <script>
 
-        // 초기 size 세팅 
-        var x = window.innerWidth;
-        var y = window.innerHeight;
- 
-        var header    = document.getElementById("header");
-        var backgrond = document.getElementById("backgrond");
-        var content   = document.getElementById("content");
-    
-        if(x <= 500){
-                header.style.width    = x +"px";
-                backgrond.style.width = x +"px";
-                content.style.width   = x +"px";
-        } else{
-            header.style.width = "500px";
-            backgrond.style.width = "500px";
-            content.style.width = "500px";
-        }
 
-        // widow size 변경 시 
-        window.onresize = function() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;	
-            
-            //window 사이즈가 500px 보다 작다면, 
-            if(width <= 500){
-                header.style.width    = width +"px";
-                backgrond.style.width = width +"px";
-                content.style.width   = width +"px";
-            }
-        }
-
-        // 테스트 진행 후 로직 
-        
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

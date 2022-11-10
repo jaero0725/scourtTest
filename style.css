@@ -34,9 +34,13 @@ article {
 }
 
 button.answerBtn{ 	
-    border:none
+    border:none;
+    margin-bottom:0.5rem;
 }
 button.answerBtn:focus{ 	
     border: none;
     outline:none;
+}
+.result_relatedResult{
+    display: block;text-align: center; width: 100%; margin-bottom:0.7rem;
 }

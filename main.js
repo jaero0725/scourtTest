@@ -1,84 +1,102 @@
-        // 함수
 
-        // questions 진행시 UI 세팅 관련
+var progressCnt = 1;
+var currentCnt;         // 뒤로가기 위함.
+var resultIndex = 1;
+window.onload = function()  {
+    // 초기 size 세팅 
+    var x = window.innerWidth;
+    var y = window.innerHeight;
 
-        // 1. 시작할경우 
-       
+    var header    = document.getElementById("header");
+    var backgrond = document.getElementById("backgrond");
+    var content   = document.getElementById("content");
+
+    if(x <= 500){
+            header.style.width    = x +"px";
+            backgrond.style.width = x +"px";
+            content.style.width   = x +"px";
+    } else{
+        header.style.width = "500px";
+        backgrond.style.width = "500px";
+        content.style.width = "500px";
+    }
+
+    //questions 세팅 
+    $('#question-step_question-title').attr({ src: questions[progressCnt].questionImageSrc });  // questionImageSrc 세팅
+    $('#question-step_question-image').attr({ src: questions[progressCnt].titleImageSrc });     // titleImageSrc 세팅 
+    $('#answerAImageSrc').attr({ src: questions[progressCnt].answerAImageSrc });                // answerAImageSrc 세팅
+    $('#answerBImageSrc').attr({ src: questions[progressCnt].answerBImageSrc });                // answerBImageSrc 세팅
+
+}
+
+// widow size 변경 시 
+window.onresize = function() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;	
+    
+    //window 사이즈가 500px 보다 작다면, 
+    if(width <= 500){
+        header.style.width    = width +"px";
+        backgrond.style.width = width +"px";
+        content.style.width   = width +"px";
+    }
+}
 
 
-        var num = 1;
+// 시작버튼 실행시 
+$("#startBtn").on("click", function(){
+    //set UI
+    $('#intro_content').css( 'display', 'none' ); 
+    $('#question_content').css( 'display', '' ); 
+});
 
-        var q = {
-            1: {"title": "1번<br><br>1번문제", "type": "EI", "A": "<br>웅<br>", "B": "<br>아니야<br>"},
-            2: {"title": "2번<br><br>2번문제", "type": "EI", "A": "<br>웅<br>", "B": "<br>아니야<br>"},
-            3: {"title": "3번<br><br>3번문제", "type": "EI", "A": "<br>웅<br>", "B": "<br>아니야<br>"},
-            4: {"title": "4번<br><br>4번문제", "type": "SN", "A": "<br>웅<br>", "B": "<br>아니야<br>"},
-            5: {"title": "5번<br><br>5번문제", "type": "SN", "A": "<br>웅<br>", "B": "<br>아니야<br>"}
-        }
+// A 버튼 클릭시 
+$("#answerABtn").on("click", function(){
+    progressCnt++;
+    if(progressCnt < 5){
+        setQuestionAndAnswer(progressCnt);
+        calScore();
+    } else if (progressCnt == 5){
+        setResult();
+        progressCnt = 0;
+    }
+});
 
-        var result = {
-            "ISTJ": {"moneytype": "관리자형", "explain": "", "img": "1.jpg"},
-            "ISFJ": {"moneytype": "관리자형", "explain": "", "img": "1.jpg"},
-            "ESTJ": {"moneytype": "관리자형", "explain": "", "img": "1.jpg"},
-            "ESFJ": {"moneytype": "관리자형", "explain": "", "img": "1.jpg"},
+// B 버튼 클릭시 
+$("#answerBBtn").on("click", function(){
+    progressCnt++;
+    if(progressCnt < 5){
+        setQuestionAndAnswer(progressCnt);
+    } else if (progressCnt == 5){
+        setResult();
+        progressCnt = 0;
+    }
+});
 
-            "ISTP": {"moneytype": "탐험가형", "explain": "", "img": "2.jpg"},
-            "ISFP": {"moneytype": "탐험가형", "explain": "", "img": "2.jpg"},
-            "ESTP": {"moneytype": "탐험가형", "explain": "", "img": "2.jpg"},
-            "ESFP": {"moneytype": "탐험가형", "explain": "", "img": "2.jpg"},
+// 총점계산
+function calScore(){
 
-        
-            "INTJ": {"moneytype": "분석형", "explain": "", "img": "3.jpg"},
-            "INTP": {"moneytype": "분석형", "explain": "", "img": "3.jpg"},
-            "ENTJ": {"moneytype": "분석형", "explain": "", "img": "3.jpg"},
-            "ENTP": {"moneytype": "분석형", "explain": "", "img": "3.jpg"},
+}
 
-            "INFJ": {"moneytype": "외교형", "explain": "", "img": "4.jpg"},
-            "INFP": {"moneytype": "외교형", "explain": "", "img": "4.jpg"},
-            "ENFJ": {"moneytype": "외교형", "explain": "", "img": "4.jpg"},
-            "ENFP": {"moneytype": "외교형", "explain": "", "img": "4.jpg"},           
-            
-        }
+// QNA UI 세팅
+function setQuestionAndAnswer(progressCnt){
+    $('#question-step_question-title').attr({ src: questions[progressCnt].questionImageSrc });  // questionImageSrc 세팅
+    $('#question-step_question-image').attr({ src: questions[progressCnt].titleImageSrc });     // titleImageSrc 세팅 
+    $('#answerAImageSrc').attr({ src: questions[progressCnt].answerAImageSrc });                // answerAImageSrc 세팅
+    $('#answerBImageSrc').attr({ src: questions[progressCnt].answerBImageSrc });                // answerBImageSrc 세팅
+}
 
-        function start() {
-            $(".start").hide();
-            $(".question").show();
-            next();
-        }
+//결과 세팅 
+function setResult(){
+    $('#question_content').css( 'display', 'none' ); 
+    $('#result_content').css( 'display', '' ); 
 
-        //A 만 ++;
-        $("#A").click(function(){
-            var type = $("#type").val();
-            var preValue = $("#"+type).val();
-            $("#"+type).val(parseInt(preValue)+1);
-            next();
-        });
+    //score 검사해서 세팅 
+    $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
+    $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
+    $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });                // contentTitle 세팅
+    $('#relatedResult01').attr({ src: results[resultIndex].relatedResults[1].imageSrc });   //
+    $('#relatedResult02').attr({ src: results[resultIndex].relatedResults[2].imageSrc });
+    $('#relatedResult03').attr({ src: results[resultIndex].relatedResults[3].imageSrc });
 
-        $("#B").click(function(){
-            next();
-        });
-
-        function next() {
-            if (num == 5) {
-                $(".question").hide();
-                $(".result").show();
-                var mbti = "";
-                
-                ($("#EI").val() < 2) ? mbti+="I" : mbti+="E";
-                ($("#SN").val() < 2) ? mbti+="N" : mbti+="S";
-                ($("#TF").val() < 2) ? mbti+="F" : mbti+="T";
-                ($("#JP").val() < 2) ? mbti+="P" : mbti+="J";
-
-                $("#img").attr("src",result[mbti]["img"]);
-                $("#moneytype").html(result[mbti]["moneytype"]);
-                $("#explain").html(result[mbti]["explain"]);
-            }
-             else {
-                $(".progress-bar").attr('style','width: calc(100/5*'+num+'%)');
-                $("#title").html(q[num]["title"]);
-                $("#type").val(q[num]["type"]);
-                $("#A").html(q[num]["A"]);
-                $("#B").html(q[num]["B"]);
-                num++;
-            }
-        }
+}
