@@ -1,7 +1,9 @@
 
-var progressCnt = 1;
-var currentCnt;         // 뒤로가기 위함.
-var resultIndex = 1;
+let progressCnt = 1;
+let currentCnt;         // 뒤로가기 위함.
+let resultIndex = 1;        // 1 : 열정적인 배심원, 2 :배려하는 배심원 , 3: 논리적인 배심원, 4:공감하는 배심원 
+let resultCaculateArray = [0,0,0,0];
+
 window.onload = function()  {
     // 초기 size 세팅 
     var x = window.innerWidth;
@@ -52,10 +54,12 @@ $("#startBtn").on("click", function(){
 
 // A 버튼 클릭시 
 $("#answerABtn").on("click", function(){
-    progressCnt++;
+    //결과값 계산 
+    resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerAScore);
+
     if(progressCnt < 5){
-        setQuestionAndAnswer(progressCnt);
-        calScore();
+        progressCnt++;                      //진행 Cnt ++
+        setQuestionAndAnswer(progressCnt);  //다음 버튼 img로 세팅 
     } else if (progressCnt == 5){
         setResult();
         progressCnt = 0;
@@ -64,19 +68,18 @@ $("#answerABtn").on("click", function(){
 
 // B 버튼 클릭시 
 $("#answerBBtn").on("click", function(){
-    progressCnt++;
+    //결과값 계산 
+    resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerBScore);
+
     if(progressCnt < 5){
-        setQuestionAndAnswer(progressCnt);
+        progressCnt++;                      //진행 Cnt ++
+        setQuestionAndAnswer(progressCnt);  //다음 버튼 img로 세팅 
     } else if (progressCnt == 5){
         setResult();
         progressCnt = 0;
     }
 });
 
-// 총점계산
-function calScore(){
-
-}
 
 // QNA UI 세팅
 function setQuestionAndAnswer(progressCnt){
@@ -88,15 +91,36 @@ function setQuestionAndAnswer(progressCnt){
 
 //결과 세팅 
 function setResult(){
+    //score 검사해서 세팅 
+    resultIndex = searchMaxIndexArray(resultCaculateArray);
+    
+    // console.log(resultIndex)
     $('#question_content').css( 'display', 'none' ); 
     $('#result_content').css( 'display', '' ); 
-
-    //score 검사해서 세팅 
+    
     $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
     $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
     $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });                // contentTitle 세팅
     $('#relatedResult01').attr({ src: results[resultIndex].relatedResults[1].imageSrc });   //
     $('#relatedResult02').attr({ src: results[resultIndex].relatedResults[2].imageSrc });
     $('#relatedResult03').attr({ src: results[resultIndex].relatedResults[3].imageSrc });
+}
 
+
+//util 
+function arrayPlusArray(arr1, arr2) {
+    let newArr = [0,0,0,0];
+    for(let i in newArr) {
+        newArr[i] =  arr1[i] + arr2[i];
+    }
+    //alert("결과" + arr1 + " +" + arr2 + ": " + newArr);
+    return newArr;
+}
+
+function searchMaxIndexArray(arr){5
+    console.log(arr);
+    const max = Math.max(...arr);
+    const index = arr.indexOf(max) + 1;
+
+    return index;
 }
