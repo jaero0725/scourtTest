@@ -63,9 +63,9 @@
 
                                         <!-- [2] Question Content -->
                                         <div id="question_content" style="display:none;">
-                                            <img id="question-step_question-title" style="display: block;text-align: center; width: 100%; margin-bottom:1rem;">
+                                            <img class="question_content_img" id="question-step_question-title">
                                             <!-- 질문 관련 img -->
-                                            <img id="question-step_question-image" style="display: block;text-align: center; width: 100%;">
+                                            <img class="question_content_img" id="question-step_question-image">
                                             <!-- 답변 -->
                                             <div class="question-step_question" style="padding-bottom: 15px; margin: 19px auto 30px;">
                                                 <!-- 답 1 -->
@@ -78,19 +78,29 @@
 
                                         <!-- [3] Result Content -->
                                         <div id="result_content" style="display:none;">
-                                            <img id="result_titleSrc" style="display: block;text-align: center; width: 100%; margin-bottom:3%;">
-                                            <img id="result_titleImageSrc" style="display: block;text-align: center; width: 100%;margin-bottom:3%;">
-                                            <img id="result_contentImageSrc" style="display: block;text-align: center; width: 100%;margin-bottom:2%;">
+                                            <img id="result_titleSrc" >
+                                            <img id="result_titleImageSrc" >
+                                            <img id="result_contentImageSrc" >
+                                            <div id="sub">
+                                                <img id="sub_title" src="/assets/images/results/sub_title.png">
+                                            </div>
                                             <div> 
                                                 <img id="relatedResult01" class="result_relatedResult">
                                                 <img id="relatedResult02" class="result_relatedResult">
                                                 <img id="relatedResult03" class="result_relatedResult">
                                             </div>
                                             <!-- 공유하기 기능 -->
-                                            <div> 
-
+                                            <div id="shareTitle">
+                                                <img id="shareTitleSrc" src="/assets/images/icon/share_title.png">
+                                            </div>
+                                            <div id="share"> 
+                                                 <button type="button" id="kakaoBtn"><img id="kakao" src="/assets/images/icon/kakao.png"></button>
+                                                 <button type="button" id="instaBtn"><img id="insta" src="/assets/images/icon/insta.png"></button>
+                                                 <button type="button" id="facebookBtn"><img id="facebook" src="/assets/images/icon/facebook.png"></button>
+                                                 <button type="button" id="linkBtn"><img id="link" src="/assets/images/icon/link.png"></button>
                                             </div>
                                         </div>
+                                        <div class="dummy-footer" style="height: 100px;max-width: 500px;"></div>
                                     </div>
                                 </div>
                             </div>
