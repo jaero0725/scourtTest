@@ -15,9 +15,10 @@
         <div class="Toastify"></div>
         <div class="common_container">
             <!-- 배경 -->
-            <div id ="backgrond" style="position:fixed;left:50%;top:0;bottom:0;transform:translateX(-50%); max-width: 500px; background-repeat: no-repeat;
+            <div id ="backgrond" style="position:fixed;left:50%;top:0;bottom:0;transform:translateX(-50%); max-width: 500px;
             background-position: center center;
             background-size:cover;height:100%;
+            background-repeat:repeat-y;;
             background-image: url( '/assets/images/background.png' ); background-size: 100%;">
             
             <div style="position: relative; flex: 1 1 0%;">
@@ -50,7 +51,7 @@
                             <div class="page-slide-wrap">
                                 <div class="page-slide slide-off-enter-done">
                                     <div style="min-height: calc((100vh - 84px) / 1); position:relative; top:20%;
-                                     margin-left:3rem; margin-right:3rem;" >
+                                     margin-left:6%; margin-right:6%;" >
 
                                          <!-- [1] Intro Content -->
                                         <div id="intro_content" >
@@ -68,10 +69,7 @@
                                             <!-- 답변 -->
                                             <div class="question-step_question" style="padding-bottom: 15px; margin: 19px auto 30px;">
                                                 <!-- 답 1 -->
-                                                <button type="button" class="answerBtn" id="answerABtn" 
-                                                style="width:100%;height:2.6rem;
-                                                background-size:cover;background-image: url('/assets/images/questions/01/question01_A.png');
-                                                "></button>
+                                                <button type="button" class="answerBtn" id="answerABtn"><img id="answerAImageSrc" style=" width: 100%;"></button>
                                                 <!-- 답 2 -->
                                                 <button type="button" class="answerBtn" id="answerBBtn"><img id="answerBImageSrc" style=" width: 100%;"></button>
                                             </div>
@@ -80,9 +78,9 @@
 
                                         <!-- [3] Result Content -->
                                         <div id="result_content" style="display:none;">
-                                            <img id="result_titleSrc" style="display: block;text-align: center; width: 100%; margin-bottom:1rem;">
-                                            <img id="result_titleImageSrc" style="display: block;text-align: center; width: 100%;">
-                                            <img id="result_contentImageSrc" style="display: block;text-align: center; width: 100%;margin-bottom:0.7rem;">
+                                            <img id="result_titleSrc" style="display: block;text-align: center; width: 100%; margin-bottom:3%;">
+                                            <img id="result_titleImageSrc" style="display: block;text-align: center; width: 100%;margin-bottom:3%;">
+                                            <img id="result_contentImageSrc" style="display: block;text-align: center; width: 100%;margin-bottom:2%;">
                                             <div> 
                                                 <img id="relatedResult01" class="result_relatedResult">
                                                 <img id="relatedResult02" class="result_relatedResult">

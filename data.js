@@ -56,13 +56,13 @@ const results = {
         contentImageSrc : resultsImageSrc + "01/content_img01.png",
         relatedResults :{
             1 : {
-                imageSrc : resultsImageSrc + "01/sub_img01.png",
+                imageSrc : resultsImageSrc + "sub_img02.png",
             },
             2 : {
-                imageSrc : resultsImageSrc + "01/sub_img02.png",
+                imageSrc : resultsImageSrc + "sub_img03.png",
             },
             3 : {
-                imageSrc : resultsImageSrc + "01/sub_img03.png",
+                imageSrc : resultsImageSrc + "sub_img04.png",
             }
         }
     },
@@ -73,13 +73,13 @@ const results = {
         contentImageSrc : resultsImageSrc + "02/content_img02.png",
         relatedResults :{
             1 : {
-                imageSrc : resultsImageSrc + "02/sub_img01.png",
+                imageSrc : resultsImageSrc + "sub_img01.png",
             },
             2 : {
-                imageSrc : resultsImageSrc + "02/sub_img02.png",
+                imageSrc : resultsImageSrc + "sub_img03.png",
             },
             3 : {
-                imageSrc : resultsImageSrc + "02/sub_img03.png",
+                imageSrc : resultsImageSrc + "sub_img04.png",
             }
         }
     },
@@ -90,13 +90,13 @@ const results = {
         contentImageSrc : resultsImageSrc + "03/content_img03.png",
         relatedResults :{
             1 : {
-                imageSrc : resultsImageSrc + "03/sub_img01.png",
+                imageSrc : resultsImageSrc + "sub_img01.png",
             },
             2 : {
-                imageSrc : resultsImageSrc + "03/sub_img02.png",
+                imageSrc : resultsImageSrc + "sub_img02.png",
             },
             3 : {
-                imageSrc : resultsImageSrc + "03/sub_img03.png",
+                imageSrc : resultsImageSrc + "sub_img04.png",
             }
         }
     },
@@ -107,13 +107,13 @@ const results = {
         contentSrc : resultsImageSrc + "04/content_img04.png",
         relatedResults :{
             1 : {
-                imageSrc : resultsImageSrc + "04/sub_img01.png",
+                imageSrc : resultsImageSrc + "sub_img01.png",
             },
             2 : {
-                imageSrc : resultsImageSrc + "04/sub_img02.png",
+                imageSrc : resultsImageSrc + "sub_img02.png",
             },
             3 : {
-                imageSrc : resultsImageSrc + "04/sub_img03.png",
+                imageSrc : resultsImageSrc + "sub_img03.png",
             }
         }
     }
