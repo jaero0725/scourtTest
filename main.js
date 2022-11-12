@@ -110,6 +110,7 @@ function setResult(){
 /*
     공유하기 기능 함수
 */
+const url = encodeURI(window.location.href);
 
 //kakao 공유하기 - 카카오톡 공유 API
 $("#kakaoBtn").on("click", function(){
@@ -138,11 +139,10 @@ $("#kakaoBtn").on("click", function(){
       
 });
 
-const url = encodeURI(window.location.href);
-
-//instagram 공유하기
-$("#instaBtn").on("click", function(){
-    
+//트위터 공유하기
+$("#tweetBtn").on("click", function(){
+    const text = '나는 어떤 배심원일까?'
+  window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" +  url)
 });
 
 //facebook 공유하기
