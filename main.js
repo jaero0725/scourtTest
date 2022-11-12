@@ -115,28 +115,18 @@ $("#kakaoBtn").on("click", function(){
     Kakao.Share.sendDefault({
         objectType: 'feed',
         content: {
-          title: '국민참여재판 배심원유형검사',
+          title: '나는 어떤 배심원일까? 당신이 어떤 배심원지 알아보세요.',
           description: '',
           imageUrl:
-            'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+            'https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png',
           link: {
             mobileWebUrl: 'https://developers.kakao.com',
             webUrl: 'https://developers.kakao.com',
           },
         },
-        itemContent: {
-          profileText: '국민참여재판 배심원유형검사',
-        },
         buttons: [
           {
             title: '웹으로 이동',
-            link: {
-              mobileWebUrl: 'https://developers.kakao.com',
-              webUrl: 'https://developers.kakao.com',
-            },
-          },
-          {
-            title: '앱으로 이동',
             link: {
               mobileWebUrl: 'https://developers.kakao.com',
               webUrl: 'https://developers.kakao.com',
