@@ -29,6 +29,8 @@ window.onload = function()  {
     $('#answerAImageSrc').attr({ src: questions[progressCnt].answerAImageSrc });                // answerAImageSrc 세팅
     $('#answerBImageSrc').attr({ src: questions[progressCnt].answerBImageSrc });                // answerBImageSrc 세팅
 
+    Kakao.init('06dd1f2514881e17de053dde9e87cc67');
+    console.log(Kakao.isInitialized());
 }
 
 // widow size 변경 시 
@@ -100,14 +102,70 @@ function setResult(){
     
     $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
     $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
-    $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });                // contentTitle 세팅
-    $('#relatedResult01').attr({ src: results[resultIndex].relatedResults[1].imageSrc });   //
-    $('#relatedResult02').attr({ src: results[resultIndex].relatedResults[2].imageSrc });
-    $('#relatedResult03').attr({ src: results[resultIndex].relatedResults[3].imageSrc });
+    $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });
+    $('#relatedResult0' + resultIndex).css( 'display', 'none' );                 
 }
 
 
-//util 
+/*
+    공유하기 기능 함수
+*/
+Kakao.Share.createDefaultButton({
+    container: '#kakaotalk-sharing-btn',
+    objectType: 'feed',
+    content: {
+      title: '국민참여재판 배심원유형테스트',
+      description: '#국민참여재판',
+      imageUrl:
+        'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+      link: {
+        mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app',
+        webUrl: 'https://leafy-empanada-b0c97b.netlify.app',
+      },
+    },
+    social: {
+      likeCount: 286,
+      commentCount: 45,
+      sharedCount: 845,
+    },
+    buttons: [
+      {
+        title: '웹으로 보기',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+      {
+        title: '앱으로 보기',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+    ],
+  });
+  
+//kakao 공유하기 - 카카오톡 공유 API
+
+
+//instagram 공유하기
+$("#instaBtn").on("click", function(){
+    
+});
+
+//facebook 공유하기
+$("#facebookBtn").on("click", function(){
+    
+});
+
+//link 공유하기 
+$("#linkBtn").on("click", function(){
+    
+});
+/*
+    결과값 계산 함수
+*/
 function arrayPlusArray(arr1, arr2) {
     let newArr = [0,0,0,0];
     for(let i in newArr) {
@@ -124,3 +182,4 @@ function searchMaxIndexArray(arr){5
 
     return index;
 }
+

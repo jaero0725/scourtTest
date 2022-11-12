@@ -54,68 +54,23 @@ const results = {
         titleSrc :  resultsImageSrc + "01/title01.png",
         titleImageSrc : resultsImageSrc + "01/title_img01.png",
         contentImageSrc : resultsImageSrc + "01/content_img01.png",
-        relatedResults :{
-            1 : {
-                imageSrc : resultsImageSrc + "sub_img02.png",
-            },
-            2 : {
-                imageSrc : resultsImageSrc + "sub_img03.png",
-            },
-            3 : {
-                imageSrc : resultsImageSrc + "sub_img04.png",
-            }
-        }
     },
     2: {
         title : "배려하는 배심원",
         titleSrc :  resultsImageSrc + "02/title02.png",
         titleImageSrc : resultsImageSrc + "02/title_img02.png",
         contentImageSrc : resultsImageSrc + "02/content_img02.png",
-        relatedResults :{
-            1 : {
-                imageSrc : resultsImageSrc + "sub_img01.png",
-            },
-            2 : {
-                imageSrc : resultsImageSrc + "sub_img03.png",
-            },
-            3 : {
-                imageSrc : resultsImageSrc + "sub_img04.png",
-            }
-        }
     },
     3 : {
         title : "논리적인 배심원",
         titleSrc :  resultsImageSrc + "03/title03.png",
         titleImageSrc : resultsImageSrc + "03/title_img03.png",
         contentImageSrc : resultsImageSrc + "03/content_img03.png",
-        relatedResults :{
-            1 : {
-                imageSrc : resultsImageSrc + "sub_img01.png",
-            },
-            2 : {
-                imageSrc : resultsImageSrc + "sub_img02.png",
-            },
-            3 : {
-                imageSrc : resultsImageSrc + "sub_img04.png",
-            }
-        }
     },
     4 : {
         title : "공감하는 배심원",
         titleSrc :  resultsImageSrc + "04/title04.png",
         titleImageSrc : resultsImageSrc + "04/title_img04.png",
         contentSrc : resultsImageSrc + "04/content_img04.png",
-        relatedResults :{
-            1 : {
-                imageSrc : resultsImageSrc + "sub_img01.png",
-            },
-            2 : {
-                imageSrc : resultsImageSrc + "sub_img02.png",
-            },
-            3 : {
-                imageSrc : resultsImageSrc + "sub_img03.png",
-            }
-        }
     }
 };
-
