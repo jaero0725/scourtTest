@@ -116,7 +116,7 @@ $("#kakaoBtn").on("click", function(){
         objectType: 'feed',
         content: {
           title: '국민참여재판 배심원유형검사',
-          description: '아메리카노, 빵, 케익',
+          description: '',
           imageUrl:
             'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
           link: {
@@ -125,28 +125,7 @@ $("#kakaoBtn").on("click", function(){
           },
         },
         itemContent: {
-          profileText: 'Kakao',
-          profileImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-          titleImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-          titleImageText: 'Cheese cake',
-          titleImageCategory: 'Cake',
-          items: [
-            {
-              item: 'Cake1',
-              itemOp: '1000원',
-            },
-            {
-              item: 'Cake2',
-              itemOp: '2000원',
-            },
-          ],
-          sum: '총 결제금액',
-          sumOp: '15000원',
-        },
-        social: {
-          likeCount: 10,
-          commentCount: 20,
-          sharedCount: 30,
+          profileText: '국민참여재판 배심원유형검사',
         },
         buttons: [
           {
