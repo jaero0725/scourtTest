@@ -126,7 +126,7 @@ $("#kakaoBtn").on("click", function(){
         },
         buttons: [
           {
-            title: '웹으로 이동',
+            title: '확인해보러가기',
             link: {
               mobileWebUrl: 'https://developers.kakao.com',
               webUrl: 'https://developers.kakao.com',
