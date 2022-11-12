@@ -110,44 +110,63 @@ function setResult(){
 /*
     공유하기 기능 함수
 */
-Kakao.Share.createDefaultButton({
-    container: '#kakaotalk-sharing-btn',
-    objectType: 'feed',
-    content: {
-      title: '국민참여재판 배심원유형테스트',
-      description: '#국민참여재판',
-      imageUrl:
-        'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-      link: {
-        mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app',
-        webUrl: 'https://leafy-empanada-b0c97b.netlify.app',
-      },
-    },
-    social: {
-      likeCount: 286,
-      commentCount: 45,
-      sharedCount: 845,
-    },
-    buttons: [
-      {
-        title: '웹으로 보기',
-        link: {
-          mobileWebUrl: 'https://developers.kakao.com',
-          webUrl: 'https://developers.kakao.com',
-        },
-      },
-      {
-        title: '앱으로 보기',
-        link: {
-          mobileWebUrl: 'https://developers.kakao.com',
-          webUrl: 'https://developers.kakao.com',
-        },
-      },
-    ],
-  });
-  
 //kakao 공유하기 - 카카오톡 공유 API
-
+$("#kakaoBtn").on("click", function(){
+    Kakao.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: '국민참여재판 배심원유형검사',
+          description: '아메리카노, 빵, 케익',
+          imageUrl:
+            'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
+        },
+        itemContent: {
+          profileText: 'Kakao',
+          profileImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+          titleImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+          titleImageText: 'Cheese cake',
+          titleImageCategory: 'Cake',
+          items: [
+            {
+              item: 'Cake1',
+              itemOp: '1000원',
+            },
+            {
+              item: 'Cake2',
+              itemOp: '2000원',
+            },
+          ],
+          sum: '총 결제금액',
+          sumOp: '15000원',
+        },
+        social: {
+          likeCount: 10,
+          commentCount: 20,
+          sharedCount: 30,
+        },
+        buttons: [
+          {
+            title: '웹으로 이동',
+            link: {
+              mobileWebUrl: 'https://developers.kakao.com',
+              webUrl: 'https://developers.kakao.com',
+            },
+          },
+          {
+            title: '앱으로 이동',
+            link: {
+              mobileWebUrl: 'https://developers.kakao.com',
+              webUrl: 'https://developers.kakao.com',
+            },
+          },
+        ],
+      });
+      
+});
 
 //instagram 공유하기
 $("#instaBtn").on("click", function(){
