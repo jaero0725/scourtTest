@@ -110,12 +110,13 @@ function setResult(){
 /*
     공유하기 기능 함수
 */
+
 //kakao 공유하기 - 카카오톡 공유 API
 $("#kakaoBtn").on("click", function(){
     Kakao.Share.sendDefault({
         objectType: 'feed',
         content: {
-          title: '나는 어떤 배심원일까? 당신이 어떤 배심원지 알아보세요.',
+          title: '나는 어떤 배심원일까? 당신이 어떤 배심원인지 알아보세요.',
           description: '',
           imageUrl:
             'https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png',
@@ -137,6 +138,8 @@ $("#kakaoBtn").on("click", function(){
       
 });
 
+const url = encodeURI(window.location.href);
+
 //instagram 공유하기
 $("#instaBtn").on("click", function(){
     
@@ -144,13 +147,15 @@ $("#instaBtn").on("click", function(){
 
 //facebook 공유하기
 $("#facebookBtn").on("click", function(){
-    
+    window.open("http://www.facebook.com/sharer/sharer.php?u=" + url);
 });
 
 //link 공유하기 
 $("#linkBtn").on("click", function(){
-    
+    navigator.clipboard.writeText(window.location.href);
+    alert("주소가 복사되었습니다.");
 });
+
 /*
     결과값 계산 함수
 */
@@ -170,4 +175,5 @@ function searchMaxIndexArray(arr){5
 
     return index;
 }
+
 
