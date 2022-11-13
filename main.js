@@ -25,26 +25,26 @@ window.onload = function()  {
         content.style.width = "500px";
     }
 Kakao.init('06dd1f2514881e17de053dde9e87cc67');
-    console.log(sessionStorage.getItem("check"));
-    console.log(sessionStorage.getItem("result"));
-    if(sessionStorage.getItem("check")){
-        console.log("테스트 한사람");
-        // 테스트 한사람이면, 결과페이지로 이동
+    // console.log(sessionStorage.getItem("check"));
+    // console.log(sessionStorage.getItem("result"));
+    // if(sessionStorage.getItem("check")){
+    //     console.log("테스트 한사람");
+    //     // 테스트 한사람이면, 결과페이지로 이동
 
-        $('#intro_content').css( 'display', 'none' ); 
-        $('#question_content').css( 'display', 'none' ); 
-        $('#result_content').css( 'display', '' ); 
+    //     $('#intro_content').css( 'display', 'none' ); 
+    //     $('#question_content').css( 'display', 'none' ); 
+    //     $('#result_content').css( 'display', '' ); 
 
-        resultIndex = sessionStorage.getItem("result");
-        $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
-        $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
-        $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });
-        $('#relatedResult0' + resultIndex).css( 'display', 'none' );
+    //     resultIndex = sessionStorage.getItem("result");
+    //     $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
+    //     $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
+    //     $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });
+    //     $('#relatedResult0' + resultIndex).css( 'display', 'none' );
 
-        progressCnt = 0;
+    //     progressCnt = 0;
 
-        // 테스트 다시하기를 누를 경우에만 check됨. 
-    }
+    //     // 테스트 다시하기를 누를 경우에만 check됨. 
+    // }
 
     //questions 세팅 
     $('#question-step_question-title').attr({ src: questions[progressCnt].questionImageSrc });  // questionImageSrc 세팅
