@@ -5,6 +5,8 @@ let resultIndex = 1;        // 1 : 열정적인 배심원, 2 :배려하는 배�
 let resultCaculateArray = [0,0,0,0];
 
 window.onload = function()  {
+   
+
     // 초기 size 세팅 
     var x = window.innerWidth;
     var y = window.innerHeight;
@@ -22,6 +24,27 @@ window.onload = function()  {
         backgrond.style.width = "500px";
         content.style.width = "500px";
     }
+Kakao.init('06dd1f2514881e17de053dde9e87cc67');
+    console.log(sessionStorage.getItem("check"));
+    console.log(sessionStorage.getItem("result"));
+    if(sessionStorage.getItem("check")){
+        console.log("테스트 한사람");
+        // 테스트 한사람이면, 결과페이지로 이동
+
+        $('#intro_content').css( 'display', 'none' ); 
+        $('#question_content').css( 'display', 'none' ); 
+        $('#result_content').css( 'display', '' ); 
+
+        resultIndex = sessionStorage.getItem("result");
+        $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
+        $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
+        $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });
+        $('#relatedResult0' + resultIndex).css( 'display', 'none' );
+
+        progressCnt = 0;
+
+        // 테스트 다시하기를 누를 경우에만 check됨. 
+    }
 
     //questions 세팅 
     $('#question-step_question-title').attr({ src: questions[progressCnt].questionImageSrc });  // questionImageSrc 세팅
@@ -30,7 +53,6 @@ window.onload = function()  {
     $('#answerBImageSrc').attr({ src: questions[progressCnt].answerBImageSrc });                // answerBImageSrc 세팅
 
     Kakao.init('06dd1f2514881e17de053dde9e87cc67');
-    console.log(Kakao.isInitialized());
 }
 
 // widow size 변경 시 
@@ -46,7 +68,6 @@ window.onresize = function() {
     }
 }
 
-
 // 시작버튼 실행시 
 $("#startBtn").on("click", function(){
     //set UI
@@ -56,33 +77,26 @@ $("#startBtn").on("click", function(){
 
 // A 버튼 클릭시 
 $("#answerABtn").on("click", function(){
-    //결과값 계산 
-    resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerAScore);
-
-    if(progressCnt < 5){
-        progressCnt++;                      //진행 Cnt ++
-        setQuestionAndAnswer(progressCnt);  //다음 버튼 img로 세팅 
-    } else if (progressCnt == 5){
-        setResult();
-        progressCnt = 0;
-    }
+    setAnswerBtn();
 });
 
 // B 버튼 클릭시 
 $("#answerBBtn").on("click", function(){
+    setAnswerBtn();
+});
+
+function setAnswerBtn(){
     //결과값 계산 
     resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerBScore);
 
     if(progressCnt < 5){
-        progressCnt++;                      //진행 Cnt ++
-        setQuestionAndAnswer(progressCnt);  //다음 버튼 img로 세팅 
+        progressCnt++;                      // 진행 Cnt ++
+        setQuestionAndAnswer(progressCnt);  // 다음 버튼 img로 세팅 
     } else if (progressCnt == 5){
         setResult();
         progressCnt = 0;
     }
-});
-
-
+}
 // QNA UI 세팅
 function setQuestionAndAnswer(progressCnt){
     $('#question-step_question-title').attr({ src: questions[progressCnt].questionImageSrc });  // questionImageSrc 세팅
@@ -103,7 +117,11 @@ function setResult(){
     $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
     $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
     $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });
-    $('#relatedResult0' + resultIndex).css( 'display', 'none' );                 
+    $('#relatedResult0' + resultIndex).css( 'display', 'none' );      
+
+    // 다시 들어갈시 테스트한사람인지 check 한다. 
+    sessionStorage.setItem("check", "true"); 
+    sessionStorage.setItem("result", resultIndex); 
 }
 
 
@@ -118,7 +136,7 @@ $("#kakaoBtn").on("click", function(){
         objectType: 'feed',
         content: {
           title: '나는 어떤 배심원일까? 당신이 어떤 배심원인지 알아보세요.',
-          description: '',
+          //description: '',
           imageUrl:
             'https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png',
           link: {
@@ -142,7 +160,7 @@ $("#kakaoBtn").on("click", function(){
 //트위터 공유하기
 $("#tweetBtn").on("click", function(){
     const text = '나는 어떤 배심원일까?'
-  window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" +  url)
+    window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" +  url)
 });
 
 //facebook 공유하기
