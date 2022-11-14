@@ -81,6 +81,9 @@ button.answerBtn:focus{
     width:80%;
     height:80%;
 }
+#header_img{
+    margin-top:3%;
+}
 .question_content_img{
     display: block;text-align: center; width: 100%; margin-bottom:3%;
 } 

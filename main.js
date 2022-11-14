@@ -71,6 +71,12 @@ window.onresize = function() {
 // 배심원 유형 테스트 시작버튼 실행시 
 $("#test01_btn").on("click", function(){
     //set UI
+    $('#header').css( 'display', '' );  // header 생성
+    $(".dummy-header").css( 'height', '100px' ); // 더미헤더 height 변경
+    
+    //배심원유형 테스트 일 경우 헤더 
+    $('#header_img').attr({ src:  "/assets/images/test01_header.png" });                     // titleSrc 세팅
+    
     $('#intro_content').css( 'display', 'none' ); 
     $('#question_content').css( 'display', '' ); 
 });
@@ -79,6 +85,10 @@ $("#test01_btn").on("click", function(){
 $("#test02_btn").on("click", function(){
     //set UI
     alert("개발중입니다.");
+    return;
+
+    $('#header_img').attr({ src:  "/assets/images/test02_header.png" });                     // titleSrc 세팅
+    //국민참여재판 튜토리얼 일 경우 헤더 
 });
 
 // A 버튼 클릭시 
@@ -193,7 +203,7 @@ function arrayPlusArray(arr1, arr2) {
     for(let i in newArr) {
         newArr[i] =  arr1[i] + arr2[i];
     }
-    alert("결과" + arr1 + " +" + arr2 + ": " + newArr);
+    console.log("결과" + arr1 + " +" + arr2 + ": " + newArr);
     return newArr;
 }
 
