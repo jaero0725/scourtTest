@@ -77,15 +77,20 @@ $("#startBtn").on("click", function(){
 
 // A 버튼 클릭시 
 $("#answerABtn").on("click", function(){
-    setAnswerBtn();
+    //결과값 계산 
+    resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerAScore);
+
+    if(progressCnt < 5){
+        progressCnt++;                      // 진행 Cnt ++
+        setQuestionAndAnswer(progressCnt);  // 다음 버튼 img로 세팅 
+    } else if (progressCnt == 5){
+        setResult();
+        progressCnt = 0;
+    }
 });
 
 // B 버튼 클릭시 
 $("#answerBBtn").on("click", function(){
-    setAnswerBtn();
-});
-
-function setAnswerBtn(){
     //결과값 계산 
     resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerBScore);
 
@@ -96,7 +101,8 @@ function setAnswerBtn(){
         setResult();
         progressCnt = 0;
     }
-}
+});
+
 // QNA UI 세팅
 function setQuestionAndAnswer(progressCnt){
     $('#question-step_question-title').attr({ src: questions[progressCnt].questionImageSrc });  // questionImageSrc 세팅
@@ -110,7 +116,7 @@ function setResult(){
     //score 검사해서 세팅 
     resultIndex = searchMaxIndexArray(resultCaculateArray);
     
-    // console.log(resultIndex)
+    console.log(resultIndex)
     $('#question_content').css( 'display', 'none' ); 
     $('#result_content').css( 'display', '' ); 
     
@@ -120,8 +126,8 @@ function setResult(){
     $('#relatedResult0' + resultIndex).css( 'display', 'none' );      
 
     // 다시 들어갈시 테스트한사람인지 check 한다. 
-    sessionStorage.setItem("check", "true"); 
-    sessionStorage.setItem("result", resultIndex); 
+    //sessionStorage.setItem("check", "true"); 
+    //sessionStorage.setItem("result", resultIndex); 
 }
 
 
@@ -190,7 +196,6 @@ function searchMaxIndexArray(arr){5
     console.log(arr);
     const max = Math.max(...arr);
     const index = arr.indexOf(max) + 1;
-
     return index;
 }
 
