@@ -97,12 +97,16 @@ button.answerBtn{
     margin-top:10%;
     margin-bottom:3%;
 }
+#shareTitleSrc{
+    width:100%;
+    height:100%;
+}
 #share {
     width:100%;
     height:20px;
 }
 .shareBtn{
-    width:13%;
+    width:13.8%;
 }
 #share img{
     width:100%;
