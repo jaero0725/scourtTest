@@ -68,11 +68,17 @@ window.onresize = function() {
     }
 }
 
-// 시작버튼 실행시 
-$("#startBtn").on("click", function(){
+// 배심원 유형 테스트 시작버튼 실행시 
+$("#test01_btn").on("click", function(){
     //set UI
     $('#intro_content').css( 'display', 'none' ); 
     $('#question_content').css( 'display', '' ); 
+});
+
+// 국민참여재판 튜토리얼 시작버튼 실행시 
+$("#test02_btn").on("click", function(){
+    //set UI
+    alert("개발중입니다.");
 });
 
 // A 버튼 클릭시 
@@ -187,7 +193,7 @@ function arrayPlusArray(arr1, arr2) {
     for(let i in newArr) {
         newArr[i] =  arr1[i] + arr2[i];
     }
-    //alert("결과" + arr1 + " +" + arr2 + ": " + newArr);
+    alert("결과" + arr1 + " +" + arr2 + ": " + newArr);
     return newArr;
 }
 

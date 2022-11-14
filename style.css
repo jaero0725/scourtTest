@@ -62,6 +62,25 @@ button.answerBtn:focus{
     outline:none;
 }
 
+.intro_content{
+    display: block;text-align: center; width: 100%; margin-bottom:3%;
+} 
+.intro_content_img{
+    display: block;text-align: center; width: 100%; margin-bottom:3%;
+}
+#intro_titleSrc{
+    margin-top:0%;
+    margin-bottom:10%;
+}
+#test01{
+    margin-bottom:10%;
+    width:80%;
+    height:80%;
+}
+#test02{
+    width:80%;
+    height:80%;
+}
 .question_content_img{
     display: block;text-align: center; width: 100%; margin-bottom:3%;
 } 
