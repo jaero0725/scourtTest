@@ -85,7 +85,7 @@ button.answerBtn:focus{
     margin-top:3%;
 }
 .question_content_img{
-    display: block;text-align: center; width: 100%; margin-bottom:3%;
+    display: block;text-align: center; width: 100%; margin-bottom:10%;
 } 
 button.answerBtn{ 	
     border:none;
