@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>국민참여재판 튜토리얼 [결과]</title>
+    <title>테스트 [결과]</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <meta property="og:url"           content="https://leafy-empanada-b0c97b.netlify.app/result.html" />
+    <meta property="og:url"           content="https://leafy-empanada-b0c97b.netlify.app/result2.html" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="국민참여재판 튜토리얼" />
-    <meta property="og:description"   content="국민참여재판 튜토리얼" />
+    <meta property="og:title"         content="국민참여재판 배심원유형 테스트" />
+    <meta property="og:description"   content="배심원유형 테스트" />
     <meta property="og:image"         content="'https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png'," />
 </head>
 <body>
     <div id="next">
         <div class="Toastify"></div>
         <div class="common_container">
-            <!-- 배경 -->
             <div id ="backgrond" style="position:fixed;left:50%;top:0;bottom:0;transform:translateX(-50%); max-width: 500px;
             background-position: center center;
             background-size:cover;height:100%;
@@ -30,21 +29,30 @@
                         <div id="header" style="height: 50px; background-color: rgb(199, 176, 155); text-align: center;align-items: center;">
                             <div class="d-flex flex-row justify-content-center"
                                 style="height: 40%; margin: 0px auto; background-color: transparent; text-align: center; max-width: 200px;">
-                                 <img id="header_img" style="height:160%; width: 160%;" src="/assets/images/test02_header.png">
+                                 <img id="header_img" style="height:180%; width: 180%;" src="/assets/images/test01_header.png">
                             </div>
                         </div>
                     </div>
-                    <div id="content" class="content" style="max-height: 500px; max-width: 500px;"> <!-- 기종 사이즈에 맞춰서 변경 -->
-                            <div class="dummy-header" style="height:80px;max-width: 500px;"></div>
+                    <div id="content" class="content" style="max-height: 500px; max-width: 500px;"> 
+                            <div class="dummy-header" style="height:100px;max-width: 500px;"></div>
                             <div class="page-slide-wrap">
                                 <div class="page-slide slide-off-enter-done">
                                     <div style="min-height: calc((100vh - 84px) / 1); position:relative; top:10%;
                                      margin-left:6%; margin-right:6%;" >
-                                        <div id="tutorial_result_content">
-                                            <img id="tutorial_result_titleSrc" src="/assets/images/results/tutorial_result_title.png">
-                                            <img id="tutorial_result_titleImageSrc" src="/assets/images/results/tutorial_result_titleImg.png">
+                                        <div id="result_content">
+                                            <img id="result_titleSrc" src="/assets/images/results/02/title02.png">
+                                            <img id="result_titleImageSrc" src="/assets/images/results/02/title_img02.png">
+                                            <img id="result_contentImageSrc" src="/assets/images/results/02/content_img02.png">
+                                            <div id="sub">
+                                                <img id="sub_title" src="/assets/images/results/sub_title.png">
+                                            </div>
+                                            <div> 
+                                                <img id="relatedResult02" class="result_relatedResult" src="/assets/images/results/sub_img01.png">
+                                                <img id="relatedResult03" class="result_relatedResult" src="/assets/images/results/sub_img03.png">
+                                                <img id="relatedResult04" class="result_relatedResult" src="/assets/images/results/sub_img04.png">
+                                            </div>
                                             <div id="shareTitle">
-                                                <img id="shareTitleSrc" src="/assets/images/icon/share_title2.png">
+                                                <img id="shareTitleSrc" src="/assets/images/icon/share_title.png">
                                             </div>
                                             <div id="share" class="d-flex flex-row justify-content-center"> 
                                                 <div class="item"></div>
@@ -54,7 +62,6 @@
                                                 <button type="button" class="shareBtn" id="linkBtn"><img id="link" src="/assets/images/icon/link.png"></button>
                                                 <div class="item"></div>
                                             </div>
-                                            <!-- <button type="button" id="resetBtn">다시하기</button> -->
                                         </div>
                                         <div class="dummy-footer" style="height: 100px;max-width: 500px;"></div>
                                     </div>
@@ -66,9 +73,6 @@
             </div>
         </div>
     </div>
-    <script>
-
-    </script>
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.1/kakao.min.js"
     integrity="sha384-eKjgHJ9+vwU/FCSUG3nV1RKFolUXLsc6nLQ2R1tD0t4YFPCvRmkcF8saIfOZNWf/" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -77,8 +81,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+    <script src="result.js"></script>
 </body>
-
 </html>

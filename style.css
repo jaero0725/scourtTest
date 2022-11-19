@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-
 *{font-family: 'Jua', sans-serif;}
 
 
@@ -108,6 +106,9 @@ button.t_answerBtn img{
     width:15%;
 }
 #result_content img{
+    display: block;text-align: center; width: 100%; margin-bottom:3%;
+}
+#tutorial_result_content img{
     display: block;text-align: center; width: 100%; margin-bottom:3%;
 }
 

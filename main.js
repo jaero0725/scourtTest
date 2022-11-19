@@ -49,7 +49,7 @@ window.onload = function()  {
     $('#answerAImageSrc').attr({ src: questions[progressCnt].answerAImageSrc });                // answerAImageSrc 세팅
     $('#answerBImageSrc').attr({ src: questions[progressCnt].answerBImageSrc });                // answerBImageSrc 세팅
 
-    Kakao.init('06dd1f2514881e17de053dde9e87cc67');
+
 }
 
 // widow size 변경 시 
@@ -127,25 +127,12 @@ function setQuestionAndAnswer(progressCnt){
 
 //결과 세팅 
 function setResult(){
-    //score 검사해서 세팅 
-    resultIndex = searchMaxIndexArray(resultCaculateArray);
+    resultIndex = searchMaxIndexArray(resultCaculateArray);//score 검사해서 세팅 
     
     sessionStorage.setItem("test", "01");           //배심원테스트
     sessionStorage.setItem("result", resultIndex);  //결과값저장
-    location.href = "result.html";
 
-    console.log(resultIndex)
-    // $('#question_content').css( 'display', 'none' ); 
-    // $('#result_content').css( 'display', '' ); 
-    
-    // $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
-    // $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
-    // $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });
-    // $('#relatedResult0' + resultIndex).css( 'display', 'none' );      
-
-    // 다시 들어갈시 테스트한사람인지 check 한다. 
-    //sessionStorage.setItem("check", "true"); 
-    //sessionStorage.setItem("result", resultIndex); 
+    location.href = "result"+resultIndex+ ".html";
 }
 
 
