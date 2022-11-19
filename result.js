@@ -47,14 +47,14 @@ $("#kakaoBtn").on("click", function(){
         },
         buttons: [
           {
-            title: '친구 결과 자세히 보기',
+            title: '결과 보기',
             link: {
               mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+resultIndex+".html",
               webUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+resultIndex+".html",
             },
           },
           {
-            title: '나는 어떤 유형의 배심원인지 테스트 해보기',
+            title: '테스트하기',
             link: {
               mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app',
               webUrl: 'https://leafy-empanada-b0c97b.netlify.app',
@@ -85,7 +85,7 @@ $("#kakaoBtn2").on("click", function(){
           },
         },
         {
-          title: '국민참여재판 튜토리얼 해보기',
+          title: '테스트하기',
           link: {
             mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app',
             webUrl: 'https://leafy-empanada-b0c97b.netlify.app',
