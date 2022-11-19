@@ -40,7 +40,7 @@ $("#kakaoBtn").on("click", function(){
             kakaoImgSrc,
           link: {
             mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+pageId+".html",
-            webUrl: 'https://leafy-empanada-b0c97b.netlify.app//result'+pageId+".html",
+            webUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+pageId+".html",
           },
         },
         buttons: [
