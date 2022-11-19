@@ -73,3 +73,7 @@ $("#linkBtn").on("click", function(){
     navigator.clipboard.writeText(window.location.href);
     alert("주소가 복사되었습니다.");
 });
+
+$("#resetBtn").on("click", function(){
+   location.href = "index.html";
+});

@@ -102,6 +102,17 @@ button.t_answerBtn img{
     width : 100%;
     height : 100%;
 }
+#backBtn{
+    border:none;
+    background-color:transparent;
+    margin-bottom:1%;
+    width : 30px;
+    height : 30px;
+}
+#back_img{
+    width : 100%;
+    height : 100%;
+}
 #dummy{
     width:15%;
 }
@@ -145,3 +156,4 @@ button.t_answerBtn img{
 .item{
     width:16.6666667%;
 }
+
