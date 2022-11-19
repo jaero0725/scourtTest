@@ -22,68 +22,26 @@ window.onload = function()  {
         backgrond.style.width = "500px";
         content.style.width = "500px";
     }
-    // console.log(sessionStorage.getItem("check"));
-    // console.log(sessionStorage.getItem("result"));
-    // if(sessionStorage.getItem("check")){
-    //     console.log("테스트 한사람");
-    //     // 테스트 한사람이면, 결과페이지로 이동
-
-    //     $('#intro_content').css( 'display', 'none' ); 
-    //     $('#question_content').css( 'display', 'none' ); 
-    //     $('#result_content').css( 'display', '' ); 
-
-    //     resultIndex = sessionStorage.getItem("result");
-    //     $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
-    //     $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
-    //     $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });
-    //     $('#relatedResult0' + resultIndex).css( 'display', 'none' );
-
-    //     progressCnt = 0;
-
-    //     // 테스트 다시하기를 누를 경우에만 check됨. 
-    // }
-
     //questions 세팅 
     $('#question-step_question-title').attr({ src: questions[progressCnt].questionImageSrc });  // questionImageSrc 세팅
     $('#question-step_question-image').attr({ src: questions[progressCnt].titleImageSrc });     // titleImageSrc 세팅 
     $('#answerAImageSrc').attr({ src: questions[progressCnt].answerAImageSrc });                // answerAImageSrc 세팅
     $('#answerBImageSrc').attr({ src: questions[progressCnt].answerBImageSrc });                // answerBImageSrc 세팅
-
-
-}
-
-// widow size 변경 시 
-window.onresize = function() {
-    const width = window.innerWidth;
-    const height = window.innerHeight;	
-    
-    //window 사이즈가 500px 보다 작다면, 
-    if(width <= 500){
-        header.style.width    = width +"px";
-        backgrond.style.width = width +"px";
-        content.style.width   = width +"px";
-    }
 }
 
 // 배심원 유형 테스트 시작버튼 실행시 
 $("#test01_btn").on("click", function(){
-    //set UI
     $('#header').css( 'display', '' );  // header 생성
-    $(".dummy-header").css( 'height', '100px' ); // 더미헤더 height 변경
-    
-    //배심원유형 테스트 일 경우 헤더 
-    $('#header_img').attr({ src:  "/assets/images/test01_header.png" });                     // titleSrc 세팅
-    
+    $(".dummy-header").css( 'height', '80px' ); // 더미헤더 height 변경
+    $('#header_img').attr({ src:  "/assets/images/test01_header.png" });                    
     $('#intro_content').css( 'display', 'none' ); 
     $('#question_content').css( 'display', '' ); 
 });
 
 // 국민참여재판 튜토리얼 시작버튼 실행시 
 $("#test02_btn").on("click", function(){
-    //set UI
     $('#header').css( 'display', '' );  // header 생성
     $(".dummy-header").css( 'height', '80px' ); // 더미헤더 height 변경
-
     $('#header_img').attr({ src:  "/assets/images/test02_header.png" });    
     $('#intro_content').css( 'display', 'none' ); 
     $('#tutorial_content').css( 'display', '' ); 
@@ -91,9 +49,7 @@ $("#test02_btn").on("click", function(){
 
 // A 버튼 클릭시 
 $("#answerABtn").on("click", function(){
-    //결과값 계산 
-    resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerAScore);
-
+    resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerAScore); //결과값 계산 
     if(progressCnt < 5){
         progressCnt++;                      // 진행 Cnt ++
         setQuestionAndAnswer(progressCnt);  // 다음 버튼 img로 세팅 
@@ -135,10 +91,7 @@ function setResult(){
     location.href = "result"+resultIndex+ ".html";
 }
 
-
-/*
-    결과값 계산 함수
-*/
+// 결과값 계산 함수
 function arrayPlusArray(arr1, arr2) {
     let newArr = [0,0,0,0];
     for(let i in newArr) {
@@ -157,7 +110,6 @@ function searchMaxIndexArray(arr){5
 
 /*
 ################################
-
 국민참여재판 절차안내 튜토리얼 함수
 - 문제별로 함수 만듦
 ################################
@@ -178,7 +130,6 @@ $("#t1_falseBtn").on("click", function(){
     //먹통?
     //alert("2");
 });
-
 
 
 // 추가될 기능  
