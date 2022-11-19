@@ -5,7 +5,6 @@ const url = encodeURI(window.location.href);
 
 
 window.onload = function()  {
-   Kakao.init('06dd1f2514881e17de053dde9e87cc67');
    var test = sessionStorage.getItem("test");
    var resultIndex = sessionStorage.getItem("result"); 
 
@@ -25,6 +24,7 @@ window.onload = function()  {
         backgrond.style.width = "500px";
         content.style.width = "500px";
     }
+    Kakao.init('06dd1f2514881e17de053dde9e87cc67');
 }
 
 // kakao 공유하기 - 카카오톡 공유 API
