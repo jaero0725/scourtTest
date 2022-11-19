@@ -34,8 +34,7 @@ $("#kakaoBtn").on("click", function(){
         content: {
           title: '나는 어떤 배심원일까? 당신이 어떤 배심원인지 알아보세요.',
           imageUrl:
-          "https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png"
-            //kakaoTitleImg[resultIndex].src,
+          "https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png",
           link: {
             mobileWebUrl: 'https://developers.kakao.com',
             webUrl: 'https://developers.kakao.com',
