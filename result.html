@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테스트 [결과]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:url"           content="https://leafy-empanada-b0c97b.netlify.app/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="국민참여재판 배심원유형 테스트" />
+    <meta property="og:description"   content="배심원유형 테스트" />
+    <meta property="og:image"         content="'https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png'," />
+</head>
+<body>
+    <div id="next">
+        <div class="Toastify"></div>
+        <div class="common_container">
+            <!-- 배경 -->
+            <div id ="backgrond" style="position:fixed;left:50%;top:0;bottom:0;transform:translateX(-50%); max-width: 500px;
+            background-position: center center;
+            background-size:cover;height:100%;
+            background-repeat:repeat-y;;
+            background-image: url( '/assets/images/background.png' ); background-size: 100%;">
+            
+            <div style="position: relative; flex: 1 1 0%;">
+                <div style="width:100%; margin-top: 0px; padding-bottom: 34px; overflow: auto;  min-height: 100vh; 
+                    overflow:scroll; overflow-x:hidden;">
+                    
+                    <!-- 고정 헤더 -->
+                    <div style="position: fixed;  height: 40px; transform: translateX(-50%) scale(1); transform-origin: center top; left: 50%; z-index: 1;">
+                        <!-- 로고 -->
+                        <div id="header" style="height: 50px; background-color: rgb(199, 176, 155); text-align: center;align-items: center;">
+                            <div class="d-flex flex-row justify-content-center"
+                                style="height: 40%; margin: 0px auto; background-color: transparent; text-align: center; max-width: 200px;">
+                                 <!--<button type="button" id="backBtn">뒤로가기</button>-->
+                                 <img id="header_img" style="height:180%; width: 180%;" >
+                            </div>
+                        </div>
+                        <!-- 로고 end-->
+
+                    </div>
+                    <!-- 고정 헤더 end-->
+                    <div id="content" class="content" style="max-height: 500px; max-width: 500px;"> <!-- 기종 사이즈에 맞춰서 변경 -->
+                            <div class="dummy-header" style="height:50px;max-width: 500px;"></div>
+                            <div class="page-slide-wrap">
+                                <div class="page-slide slide-off-enter-done">
+                                    <div style="min-height: calc((100vh - 84px) / 1); position:relative; top:10%;
+                                     margin-left:6%; margin-right:6%;" >
+
+                                        <!-- [3]Result Content -->
+                                        <div id="result_content" style="display:none;">
+                                            <img id="result_titleSrc" >
+                                            <img id="result_titleImageSrc" >
+                                            <img id="result_contentImageSrc" >
+                                            <div id="sub">
+                                                <img id="sub_title" src="/assets/images/results/sub_title.png">
+                                            </div>
+                                            <div> 
+                                                <img id="relatedResult01" class="result_relatedResult" src="/assets/images/results/sub_img01.png">
+                                                <img id="relatedResult02" class="result_relatedResult" src="/assets/images/results/sub_img02.png">
+                                                <img id="relatedResult03" class="result_relatedResult" src="/assets/images/results/sub_img03.png">
+                                                <img id="relatedResult04" class="result_relatedResult" src="/assets/images/results/sub_img04.png">
+                                            </div>
+                                            <!-- 공유하기 기능-->
+                                            <div id="shareTitle">
+                                                <img id="shareTitleSrc" src="/assets/images/icon/share_title.png">
+                                            </div>
+                                            <div id="share" class="d-flex flex-row justify-content-center"> 
+                                                <div class="item"></div>
+                                                <button type="button" class="shareBtn" id="kakaoBtn"><img id="kakao"  src="/assets/images/icon/kakao.png"></button>
+                                                <button type="button" class="shareBtn" id="tweetBtn"><img id="tweet" src="/assets/images/icon/tweet.png"></button>
+                                                <button type="button" class="shareBtn" id="facebookBtn"><img id="facebook" src="/assets/images/icon/facebook.png"></button>
+                                                <button type="button" class="shareBtn" id="linkBtn"><img id="link" src="/assets/images/icon/link.png"></button>
+                                                <div class="item"></div>
+                                            </div>
+                                            <!-- <button type="button" id="resetBtn">다시하기</button> -->
+                                        </div>
+
+                                        <!-- [3] Result Content -->
+                                        <div id="tutorial_result_content" style="display:none;">
+                                            <img id="tutorial_result_titleSrc" src="/assets/images/results/tutorial_result_title.png">
+                                            <img id="tutorial_result_titleImageSrc" src="/assets/images/results/tutorial_result_titleImg.png">
+
+                                            <!-- 공유하기 기능-->
+                                            <div id="shareTitle">
+                                                <img id="shareTitleSrc" src="/assets/images/icon/share_title2.png">
+                                            </div>
+                                            <div id="share" class="d-flex flex-row justify-content-center"> 
+                                                <div class="item"></div>
+                                                <button type="button" class="shareBtn" id="kakaoBtn"><img id="kakao"  src="/assets/images/icon/kakao.png"></button>
+                                                <button type="button" class="shareBtn" id="tweetBtn"><img id="tweet" src="/assets/images/icon/tweet.png"></button>
+                                                <button type="button" class="shareBtn" id="facebookBtn"><img id="facebook" src="/assets/images/icon/facebook.png"></button>
+                                                <button type="button" class="shareBtn" id="linkBtn"><img id="link" src="/assets/images/icon/link.png"></button>
+                                                <div class="item"></div>
+                                            </div>
+                                            <!-- <button type="button" id="resetBtn">다시하기</button> -->
+                                        </div>
+                                         <!-- END: 국민참여재판 절차안내 튜토리얼  -->
+                                        <div class="dummy-footer" style="height: 100px;max-width: 500px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 컨텐츠 end-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.1/kakao.min.js"
+    integrity="sha384-eKjgHJ9+vwU/FCSUG3nV1RKFolUXLsc6nLQ2R1tD0t4YFPCvRmkcF8saIfOZNWf/" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="data.js"></script>
+    <script src="result.js"></script>
+</body>
+
+</html>

@@ -5,8 +5,6 @@ let resultIndex = 1;        // 1 : 열정적인 배심원, 2 :배려하는 배�
 let resultCaculateArray = [0,0,0,0];
 
 window.onload = function()  {
-   
-
     // 초기 size 세팅 
     var x = window.innerWidth;
     var y = window.innerHeight;
@@ -132,67 +130,24 @@ function setResult(){
     //score 검사해서 세팅 
     resultIndex = searchMaxIndexArray(resultCaculateArray);
     
+    sessionStorage.setItem("test", "01");           //배심원테스트
+    sessionStorage.setItem("result", resultIndex);  //결과값저장
+    location.href = "result.html";
+
     console.log(resultIndex)
-    $('#question_content').css( 'display', 'none' ); 
-    $('#result_content').css( 'display', '' ); 
+    // $('#question_content').css( 'display', 'none' ); 
+    // $('#result_content').css( 'display', '' ); 
     
-    $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
-    $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
-    $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });
-    $('#relatedResult0' + resultIndex).css( 'display', 'none' );      
+    // $('#result_titleSrc').attr({ src: results[resultIndex].titleSrc });                     // titleSrc 세팅
+    // $('#result_titleImageSrc').attr({ src: results[resultIndex].titleImageSrc });                // titleImageSrc 세팅
+    // $('#result_contentImageSrc').attr({ src: results[resultIndex].contentImageSrc });
+    // $('#relatedResult0' + resultIndex).css( 'display', 'none' );      
 
     // 다시 들어갈시 테스트한사람인지 check 한다. 
     //sessionStorage.setItem("check", "true"); 
     //sessionStorage.setItem("result", resultIndex); 
 }
 
-
-/*
-    공유하기 기능 함수
-*/
-const url = encodeURI(window.location.href);
-// kakao 공유하기 - 카카오톡 공유 API
-$("#kakaoBtn").on("click", function(){
-    Kakao.Share.sendDefault({
-        objectType: 'feed',
-        content: {
-          title: '나는 어떤 배심원일까? 당신이 어떤 배심원인지 알아보세요.',
-          imageUrl:
-            kakaoTitleImg[resultIndex].src,
-          link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-            webUrl: 'https://developers.kakao.com',
-          },
-        },
-        buttons: [
-          {
-            title: '확인해보러가기',
-            link: {
-              mobileWebUrl: 'https://developers.kakao.com',
-              webUrl: 'https://developers.kakao.com',
-            },
-          },
-        ],
-      });
-      
-});
-
-//트위터 공유하기
-$("#tweetBtn").on("click", function(){
-    const text = '나는 어떤 배심원일까?';
-    window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" +  url);
-});
-
-//facebook 공유하기
-$("#facebookBtn").on("click", function(){
-    window.open("http://www.facebook.com/sharer/sharer.php?u=" + url);
-});
-
-//link 공유하기 
-$("#linkBtn").on("click", function(){
-    navigator.clipboard.writeText(window.location.href);
-    alert("주소가 복사되었습니다.");
-});
 
 /*
     결과값 계산 함수
@@ -223,10 +178,10 @@ function searchMaxIndexArray(arr){5
 $("#t1_trueBtn").on("click", function(){
     //정답 button위치 찾기 - true 
     const target = document.getElementById('t1_trueBtn'); // 요소의 id 값이 target이라 가정
-    const targetHeight = $("#t1_trueBtn").height();
+   //const targetHeight = $("#t1_trueBtn").height();
     const targetWidth = $("#t1_trueBtn").width();
     const targetTop  = target.getBoundingClientRect().top;
-    const targetLeft = target.getBoundingClientRect().left;
+   // const targetLeft = target.getBoundingClientRect().left;
     $('#correct').css( 'top', targetTop );      
     $('#correct').css( 'width', targetWidth ); 
     $('#correct').css( 'display', ''); 
