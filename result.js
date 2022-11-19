@@ -2,12 +2,10 @@
     공유하기 기능 함수
 */
 const url = encodeURI(window.location.href);
-
+var test = sessionStorage.getItem("test");
+var resultIndex = sessionStorage.getItem("result"); 
 
 window.onload = function()  {
-   
-   var test = sessionStorage.getItem("test");
-   var resultIndex = sessionStorage.getItem("result"); 
    if(test == "02" || test == null || test == undefined){
       resultIndex = "";
    }
