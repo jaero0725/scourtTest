@@ -4,11 +4,15 @@
 const url = encodeURI(window.location.href);
 var test = sessionStorage.getItem("test");
 var resultIndex = sessionStorage.getItem("result"); 
-
+var kakaoImgSrc = "https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png"
 window.onload = function()  {
    if(test == "02" || test == null || test == undefined){
-      resultIndex = "";
+        resultIndex = "";
    }
+   if(test == "01") {
+        kakaoImgSrc = kakaoTitleImg[resultIndex].src;
+   }
+   
     var x = window.innerWidth;
     var y = window.innerHeight;
 
@@ -35,7 +39,7 @@ $("#kakaoBtn").on("click", function(){
         content: {
           title: '나는 어떤 배심원일까? 당신이 어떤 배심원인지 알아보세요.',
           imageUrl:
-          "https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png",
+            kakaoImgSrc,
           link: {
             mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+resultIndex+".html",
             webUrl: 'https://leafy-empanada-b0c97b.netlify.app//result'+resultIndex+".html",
