@@ -85,18 +85,28 @@ button.answerBtn:focus{
     margin-top:3%;
 }
 .question_content_img{
-    display: block;text-align: center; width: 100%; margin-bottom:10%;
+    display: block;text-align: center; width: 100%; margin-bottom:8%;
+} 
+.tutorial_content_img{
+    display: block;text-align: center; width: 100%; margin-bottom:8%;
 } 
 button.answerBtn{ 	
     border:none;
     background-color:transparent;
     margin-bottom:1%;
 }
-
+button.t_answerBtn{ 	
+    border:none;
+    background-color:transparent;
+    margin-bottom:1%;
+}
+#true, #false {
+    width : 100%;
+    height : 100%;
+}
 #result_content img{
     display: block;text-align: center; width: 100%; margin-bottom:3%;
 }
-
 
 #sub{
     display: block;

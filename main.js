@@ -83,11 +83,12 @@ $("#test01_btn").on("click", function(){
 // 국민참여재판 튜토리얼 시작버튼 실행시 
 $("#test02_btn").on("click", function(){
     //set UI
-    alert("개발중입니다.");
-    return;
+    $('#header').css( 'display', '' );  // header 생성
+    $(".dummy-header").css( 'height', '100px' ); // 더미헤더 height 변경
 
-    $('#header_img').attr({ src:  "/assets/images/test02_header.png" });                     // titleSrc 세팅
-    //국민참여재판 튜토리얼 일 경우 헤더 
+    $('#header_img').attr({ src:  "/assets/images/test02_header.png" });    
+    $('#intro_content').css( 'display', 'none' ); 
+    $('#tutorial_content').css( 'display', '' ); 
 });
 
 // A 버튼 클릭시 
