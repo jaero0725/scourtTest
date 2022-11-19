@@ -47,16 +47,53 @@ $("#kakaoBtn").on("click", function(){
         },
         buttons: [
           {
-            title: '확인해보러가기',
+            title: '친구 결과 자세히 보기',
             link: {
               mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+resultIndex+".html",
-              webUrl: 'https://leafy-empanada-b0c97b.netlify.app//result'+resultIndex+".html",
+              webUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+resultIndex+".html",
             },
           },
-        ],
+          {
+            title: '나는 어떤 유형의 배심원인지 테스트 해보기',
+            link: {
+              mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app',
+              webUrl: 'https://leafy-empanada-b0c97b.netlify.app',
+            }
+          }
+        ]
       });
 });
 
+$("#kakaoBtn2").on("click", function(){
+  Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '국민참여재판이란 뭘까?',
+        imageUrl:
+          kakaoImgSrc,
+        link: {
+          mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result.html',
+          webUrl: 'https://leafy-empanada-b0c97b.netlify.app//result.html',
+        },
+      },
+      buttons: [
+        {
+          title: '결과 보기',
+          link: {
+            mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result.html',
+            webUrl: 'https://leafy-empanada-b0c97b.netlify.app/result.html',
+          },
+        },
+        {
+          title: '국민참여재판 튜토리얼 해보기',
+          link: {
+            mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app',
+            webUrl: 'https://leafy-empanada-b0c97b.netlify.app',
+          }
+        }
+      ]
+    });
+});
 //트위터 공유하기
 $("#tweetBtn").on("click", function(){
     const text = '나는 어떤 배심원일까?';
