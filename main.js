@@ -66,7 +66,7 @@ window.onresize = function() {
         content.style.width   = width +"px";
     }
 }
-// 배심원 테스트 
+
 // 배심원 유형 테스트 시작버튼 실행시 
 $("#test01_btn").on("click", function(){
     //set UI
@@ -84,7 +84,7 @@ $("#test01_btn").on("click", function(){
 $("#test02_btn").on("click", function(){
     //set UI
     $('#header').css( 'display', '' );  // header 생성
-    $(".dummy-header").css( 'height', '100px' ); // 더미헤더 height 변경
+    $(".dummy-header").css( 'height', '80px' ); // 더미헤더 height 변경
 
     $('#header_img').attr({ src:  "/assets/images/test02_header.png" });    
     $('#intro_content').css( 'display', 'none' ); 
@@ -212,6 +212,32 @@ function searchMaxIndexArray(arr){5
     const index = arr.indexOf(max) + 1;
     return index;
 }
+
+/*
+################################
+
+국민참여재판 절차안내 튜토리얼 함수
+- 문제별로 함수 만듦
+################################
+*/
+$("#t1_trueBtn").on("click", function(){
+    //정답 button위치 찾기 - true 
+    const target = document.getElementById('t1_trueBtn'); // 요소의 id 값이 target이라 가정
+    const targetHeight = $("#t1_trueBtn").height();
+    const targetWidth = $("#t1_trueBtn").width();
+    const targetTop  = target.getBoundingClientRect().top;
+    const targetLeft = target.getBoundingClientRect().left;
+    $('#correct').css( 'top', targetTop );      
+    $('#correct').css( 'width', targetWidth ); 
+    $('#correct').css( 'display', ''); 
+});
+
+$("#t1_falseBtn").on("click", function(){
+    //먹통?
+    //alert("2");
+});
+
+
 
 // 추가될 기능  
 //새로고침 -> 첫페이지로 이동 
