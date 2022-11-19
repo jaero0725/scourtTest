@@ -4,13 +4,12 @@
 const url = encodeURI(window.location.href);
 var test = sessionStorage.getItem("test");
 var resultIndex = sessionStorage.getItem("result"); 
-var pageId = document.getElementById('pageId').value;
+var pageId = "";
 var kakaoImgSrc = "https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png"
 window.onload = function()  {
    console.log("pageId" + pageId);
-   if(test == "01") {
-        kakaoImgSrc = kakaoTitleImg[resultIndex].src;
-   }
+   pageId = document.getElementById('pageId').value;
+   Kakao.init('06dd1f2514881e17de053dde9e87cc67');
     var x = window.innerWidth;
     var y = window.innerHeight;
 
@@ -27,7 +26,7 @@ window.onload = function()  {
         backgrond.style.width = "500px";
         content.style.width = "500px";
     }
-    Kakao.init('06dd1f2514881e17de053dde9e87cc67');
+    
 }
 
 // kakao 공유하기 - 카카오톡 공유 API
@@ -37,7 +36,7 @@ $("#kakaoBtn").on("click", function(){
         content: {
           title: '나는 어떤 배심원일까? 당신이 어떤 배심원인지 알아보세요.',
           imageUrl:
-            kakaoImgSrc,
+            kakaoTitleImg[pageId].src,
           link: {
             mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+pageId+".html",
             webUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+pageId+".html",
