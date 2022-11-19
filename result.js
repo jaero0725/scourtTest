@@ -5,9 +5,12 @@ const url = encodeURI(window.location.href);
 
 
 window.onload = function()  {
+   
    var test = sessionStorage.getItem("test");
    var resultIndex = sessionStorage.getItem("result"); 
-
+   if(test == "02" || test == null || test == undefined){
+      resultIndex = "";
+   }
     var x = window.innerWidth;
     var y = window.innerHeight;
 
@@ -36,16 +39,16 @@ $("#kakaoBtn").on("click", function(){
           imageUrl:
           "https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png",
           link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-            webUrl: 'https://developers.kakao.com',
+            mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+resultIndex+".html",
+            webUrl: 'https://leafy-empanada-b0c97b.netlify.app//result'+resultIndex+".html",
           },
         },
         buttons: [
           {
             title: '확인해보러가기',
             link: {
-              mobileWebUrl: 'https://developers.kakao.com',
-              webUrl: 'https://developers.kakao.com',
+              mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result'+resultIndex+".html",
+              webUrl: 'https://leafy-empanada-b0c97b.netlify.app//result'+resultIndex+".html",
             },
           },
         ],
