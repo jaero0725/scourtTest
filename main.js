@@ -24,7 +24,6 @@ window.onload = function()  {
         backgrond.style.width = "500px";
         content.style.width = "500px";
     }
-Kakao.init('06dd1f2514881e17de053dde9e87cc67');
     // console.log(sessionStorage.getItem("check"));
     // console.log(sessionStorage.getItem("result"));
     // if(sessionStorage.getItem("check")){
@@ -67,7 +66,7 @@ window.onresize = function() {
         content.style.width   = width +"px";
     }
 }
-
+// 배심원 테스트 
 // 배심원 유형 테스트 시작버튼 실행시 
 $("#test01_btn").on("click", function(){
     //set UI
@@ -151,8 +150,7 @@ function setResult(){
     공유하기 기능 함수
 */
 const url = encodeURI(window.location.href);
-
-//kakao 공유하기 - 카카오톡 공유 API
+// kakao 공유하기 - 카카오톡 공유 API
 $("#kakaoBtn").on("click", function(){
     Kakao.Share.sendDefault({
         objectType: 'feed',
@@ -180,8 +178,8 @@ $("#kakaoBtn").on("click", function(){
 
 //트위터 공유하기
 $("#tweetBtn").on("click", function(){
-    const text = '나는 어떤 배심원일까?'
-    window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" +  url)
+    const text = '나는 어떤 배심원일까?';
+    window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" +  url);
 });
 
 //facebook 공유하기
@@ -203,7 +201,7 @@ function arrayPlusArray(arr1, arr2) {
     for(let i in newArr) {
         newArr[i] =  arr1[i] + arr2[i];
     }
-    console.log("결과" + arr1 + " +" + arr2 + ": " + newArr);
+    console.log("결과 arr1 [" + arr1 + "] + arr2 [" + arr2 + "] = " + newArr);
     return newArr;
 }
 
@@ -214,4 +212,27 @@ function searchMaxIndexArray(arr){5
     return index;
 }
 
+// 추가될 기능  
+//새로고침 -> 첫페이지로 이동 
+$("#resetBtn").on("click", function(){
+    location.reload();
+});
+// 뒤로가기 기능
+$("#backBtn").on("click", function(){
+    console.log("init : " + resultIndex + " , " + progressCnt);
+    //첫문제일 경우 
+    if(progressCnt == 1){
+        location.reload(); //첫페이지로
+        return;
+    }  
+    //첫문제가 아닐 경우 
+    console.log("before : " + resultIndex + " , " + progressCnt);
+    resultIndex--;
+    progressCnt--;
+    console.log("after : " + resultIndex + " , " + progressCnt);
 
+    if(resultIndex == 5){
+        $('#backBtn').css( 'display', 'none' );      
+    }
+    setQuestionAndAnswer(progressCnt);
+});
