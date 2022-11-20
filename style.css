@@ -171,12 +171,11 @@ button.t_answerBtn img{
 }
 .modal_wrap{
     display: none;
-    width: 500px;
-    height: 500px;
+    width: 100%;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
-    margin: -250px 0 0 -250px;
+    margin: -50% 0 0 -50%;
     z-index: 100;
 }
 
