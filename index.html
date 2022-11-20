@@ -83,52 +83,60 @@
                                         <!-- START : 국민참여재판 절차안내 튜토리얼  -->
                                         <!-- [2] Question Content -->
                                         <div id="tutorial_content" style="display:none;">
-                                            <div class="t01" >
+                                            <div id="t1" >
                                                 <img class="tutorial_content_img" id="tutorial_title" src="/assets/images/questions/T01/title.png">
                                                 <img class="tutorial_content_img" id="tutorial-image"  src="/assets/images/questions/T01/img.png">
                                                 <div class="d-flex flex-row justify-content-center" >
                                                     <div>
-                                                        <img id="correct" style="display:none;position: fixed;"src="/assets/images/icon/correct.png">
+                                                        <img id="t1_correct" style="display:none;position: fixed;"src="/assets/images/icon/correct.png">
                                                     </div>
                                                     <button type="button" class="t_answerBtn" id="t1_trueBtn" ><img id="true" src="/assets/images/icon/true_btn.png"></button>
                                                     <div id="dummy"></div>
                                                     <button type="button" class="t_answerBtn" id="t1_falseBtn"><img id="false" src="/assets/images/icon/false_btn.png"></button>
                                                 </div>
                                             </div>
-                                            <div class="t02" style="display:none;" >
-                                                <img class="tutorial_content_img" id="tutorial_title" src="/assets/images/questions/T01/title.png">
-                                                <img class="tutorial_content_img" id="tutorial-image"  src="/assets/images/questions/T01/img.png">
+
+                                            <div id="t2" style="display:none;" >
+                                                <img class="tutorial_content_img" id="tutorial_title" src="/assets/images/questions/T02/title.png">
+                                                <img class="tutorial_content_img" id="tutorial-image"  src="/assets/images/questions/T02/img.png">
                                                 <div class="d-flex flex-row justify-content-center" >
+                                                    <div>
+                                                        <img id="t2_correct" style="display:none;position: fixed;"src="/assets/images/icon/correct.png">
+                                                    </div>
                                                     <button type="button" class="t_answerBtn" id="t2_trueBtn" ><img id="true" src="/assets/images/icon/true_btn.png"></button>
                                                     <div id="dummy"></div>
                                                     <button type="button" class="t_answerBtn" id="t2_falseBtn"><img id="false" src="/assets/images/icon/false_btn.png"></button>
                                                 </div>
+                                                <div class="modal_wrap" id="t2_modal">
+                                                    <div class="modal_close"><a href="#" id="t2_modal_closeBtn">close</a></div>
+                                                    <img class="modal_img" id="t2_modal_img" src="/assets/images/questions/T02/popup.png">
+                                                </div>
                                             </div>
-                                            <div class="t03" style="display:none;">
-                                                <img class="tutorial_content_img" id="tutorial_title" src="/assets/images/questions/T01/title.png">
-                                                <img class="tutorial_content_img" id="tutorial-image"  src="/assets/images/questions/T01/img.png">
+
+                                            <div id="t3" style="display:none;">
+                                                <img class="tutorial_content_img" id="tutorial_title" src="/assets/images/questions/T03/title.png">
+                                                <img class="tutorial_content_img" id="tutorial-image"  src="/assets/images/questions/T03/img.png">
+                                            </div>
+
+                                            <div id="t4" style="display:none;">
+                                                <img class="tutorial_content_img" id="tutorial_title" src="/assets/images/questions/T04/title.png">
+                                                <img class="tutorial_content_img" id="tutorial-image"  src="/assets/images/questions/T04/img.png">
                                                 <div class="d-flex flex-row justify-content-center" >
                                                     <button type="button" class="t_answerBtn" id="trueBtn" ><img id="true" src="/assets/images/icon/true_btn.png"></button>
                                                     <button type="button" class="t_answerBtn" id="falseBtn"><img id="false" src="/assets/images/icon/false_btn.png"></button>
                                                 </div>
                                             </div>
-                                            <div class="t04" style="display:none;">
-                                                <img class="tutorial_content_img" id="tutorial_title" src="/assets/images/questions/T01/title.png">
-                                                <img class="tutorial_content_img" id="tutorial-image"  src="/assets/images/questions/T01/img.png">
-                                                <div class="d-flex flex-row justify-content-center" >
-                                                    <button type="button" class="t_answerBtn" id="trueBtn" ><img id="true" src="/assets/images/icon/true_btn.png"></button>
-                                                    <button type="button" class="t_answerBtn" id="falseBtn"><img id="false" src="/assets/images/icon/false_btn.png"></button>
-                                                </div>
-                                            </div>
-                                            <div class="t05" style="display:none;">
-                                                <img class="tutorial_content_img" id="tutorial_title" src="/assets/images/questions/T01/title.png">
-                                                <img class="tutorial_content_img" id="tutorial-image"  src="/assets/images/questions/T01/img.png">
+
+                                            <div id="t5" style="display:none;">
+                                                <img class="tutorial_content_img" id="tutorial_title" src="/assets/images/questions/T05/title.png">
+                                                <img class="tutorial_content_img" id="tutorial-image"  src="/assets/images/questions/T05/img.png">
                                                 <div class="d-flex flex-row justify-content-center" >
                                                     <button type="button" class="t_answerBtn" id="t5_trueBtn" ><img id="true" src="/assets/images/icon/true_btn.png"></button>
                                                     <div id="dummy"></div>
                                                     <button type="button" class="t_answerBtn" id="t5_falseBtn"><img id="false" src="/assets/images/icon/false_btn.png"></button>
                                                 </div>
                                             </div>
+
                                         </div>
                                          <!-- END: 국민참여재판 절차안내 튜토리얼  -->
                                         

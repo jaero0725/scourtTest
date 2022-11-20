@@ -3,7 +3,8 @@ let progressCnt = 1;
 let currentCnt;         // 뒤로가기 위함.
 let resultIndex = 1;        // 1 : 열정적인 배심원, 2 :배려하는 배심원 , 3: 논리적인 배심원, 4:공감하는 배심원 
 let resultCaculateArray = [0,0,0,0];
-
+let isCorrect = false;
+let before_tutorial_number;
 window.onload = function()  {
     // 초기 size 세팅 
     var x = window.innerWidth;
@@ -114,29 +115,70 @@ function searchMaxIndexArray(arr){5
 - 문제별로 함수 만듦
 ################################
 */
+
+// [1] 1번 문제 
 $("#t1_trueBtn").on("click", function(){
-    //정답 button위치 찾기 - true 
+    //정답 button위치 찾기
     const target = document.getElementById('t1_trueBtn'); // 요소의 id 값이 target이라 가정
-   //const targetHeight = $("#t1_trueBtn").height();
     const targetWidth = $("#t1_trueBtn").width();
     const targetTop  = target.getBoundingClientRect().top;
-   // const targetLeft = target.getBoundingClientRect().left;
-    $('#correct').css( 'top', targetTop );      
-    $('#correct').css( 'width', targetWidth ); 
-    $('#correct').css( 'display', ''); 
+ 
+    $('#t1_correct').css( 'top', targetTop );      
+    $('#t1_correct').css( 'width', targetWidth ); 
+    $('#t1_correct').css( 'display', '');
+    
+    setTimeout(function() {
+        //본격적인 튜토리얼 시작 
+        console.log("국민참여재판 절차안내 튜토리얼 start");
+        $('#t1_correct').css( 'display', 'none');
+        $("#t1").css( 'display', 'none');             
+        $("#t2").css( 'display', '');
+    }, 1000);
 });
 
 $("#t1_falseBtn").on("click", function(){
-    //먹통?
-    //alert("2");
+    
 });
 
-
-// 추가될 기능  
-//새로고침 -> 첫페이지로 이동 
-$("#resetBtn").on("click", function(){
-    location.reload();
+// [2] 2번 문제 
+$("#t2_trueBtn").on("click", function(){
+    const target = document.getElementById('t2_trueBtn'); // 요소의 id 값이 target이라 가정
+    const targetWidth = $("#t2_trueBtn").width();
+    const targetTop  = target.getBoundingClientRect().top;
+ 
+    $('#t2_correct').css( 'top', targetTop );      
+    $('#t2_correct').css( 'width', targetWidth ); 
+    $('#t2_correct').css( 'display', '');
+    
+    document.querySelector('.modal_wrap').style.display ='block';
 });
+$("#t2_falseBtn").on("click", function(){
+
+});
+$("#t2_modal_closeBtn").on("click", function(){
+    console.log("##0")
+    document.querySelector('.modal_wrap').style.display ='none';
+    
+    //다음문제로
+    console.log("##1")
+    $('#t2_correct').css( 'display', 'none');
+    console.log("##2")
+    $("#t2").css( 'display', 'none');        
+    console.log("##3")     
+    $("#t3").css( 'display', '');
+    console.log("##4")
+    console.log("##5")
+});
+
+// [3] 3번 문제 
+
+// [4] 4번 문제 
+
+// [5] 5번 문제 
+
+
+
+// TODO : 추가중 기능 
 // 뒤로가기 기능
 $("#backBtn").on("click", function(){
     console.log("init : " + resultIndex + " , " + progressCnt);
