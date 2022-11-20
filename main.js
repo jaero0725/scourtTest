@@ -150,33 +150,80 @@ $("#t2_trueBtn").on("click", function(){
     $('#t2_correct').css( 'width', targetWidth ); 
     $('#t2_correct').css( 'display', '');
     
-    document.querySelector('.modal_wrap').style.display ='block';
+    document.querySelector('#t2_modal').style.display ='block';
 });
+
 $("#t2_falseBtn").on("click", function(){
 
 });
+
 $("#t2_modal_closeBtn").on("click", function(){
-    console.log("##0")
     document.querySelector('.modal_wrap').style.display ='none';
-    
-    //다음문제로
-    console.log("##1")
     $('#t2_correct').css( 'display', 'none');
-    console.log("##2")
     $("#t2").css( 'display', 'none');        
-    console.log("##3")     
     $("#t3").css( 'display', '');
-    console.log("##4")
-    console.log("##5")
 });
 
 // [3] 3번 문제 
+$("#t3_btn3").on("click", function(){
+    $("#t3_btn3").css( 'display', 'none');        
+    $("#t3_btn3_correct").css( 'display', '');
+
+    const target = document.getElementById('t3_btn3_correct'); 
+    const targetWidth = $("#t3_btn3_correct").width();
+    const targetTop  = target.getBoundingClientRect().top - 5;
+ 
+    $('#t3_correct').css( 'top', targetTop ); 
+    $('#t3_correct').css( 'display', '');
+    
+    document.querySelector('#t3_modal').style.display ='block';
+});
+
+$("#t3_modal_closeBtn").on("click", function(){
+    document.querySelector('.modal_wrap').style.display ='none';
+    $('#t3_correct').css( 'display', 'none');
+    $("#t3").css( 'display', 'none');        
+    $("#t4").css( 'display', '');
+});
 
 // [4] 4번 문제 
+$("#t4_btn3").on("click", function(){
+    $("#t4_btn3").css( 'display', 'none');        
+    $("#t4_btn3_correct").css( 'display', '');
+
+    const target = document.getElementById('t4_btn3_correct'); 
+    const targetWidth = $("#t4_btn3_correct").width();
+    const targetTop  = target.getBoundingClientRect().top - 5;
+ 
+    $('#t4_correct').css( 'top', targetTop ); 
+    $('#t4_correct').css( 'display', '');
+    
+    document.querySelector('#t4_modal').style.display ='block';
+});
+$("#t4_modal_closeBtn").on("click", function(){
+    document.querySelector('.modal_wrap').style.display ='none';
+    $('#t4_correct').css( 'display', 'none');
+    $("#t4").css( 'display', 'none');        
+    $("#t5").css( 'display', '');
+});
 
 // [5] 5번 문제 
+$("#t5_trueBtn").on("click", function(){
+    const target = document.getElementById('t5_trueBtn'); // 요소의 id 값이 target이라 가정
+    const targetWidth = $("#t5_trueBtn").width();
+    const targetTop  = target.getBoundingClientRect().top;
+ 
+    $('#t5_correct').css( 'top', targetTop );      
+    $('#t5_correct').css( 'width', targetWidth ); 
+    $('#t5_correct').css( 'display', '');
+    
+    document.querySelector('#t5_modal').style.display ='block';
+});
 
-
+$("#t5_modal_closeBtn").on("click", function(){
+    //결과창으로 
+    location.href = "result.html";
+});
 
 // TODO : 추가중 기능 
 // 뒤로가기 기능

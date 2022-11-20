@@ -125,9 +125,7 @@ button.t_answerBtn img{
 #result_content img{
     display: block;text-align: center; width: 100%; margin-bottom:3%;
 }
-#tutorial_result_content img{
-    display: block;text-align: center; width: 100%; margin-bottom:3%;
-}
+
 
 #sub{
     display: block;
@@ -194,4 +192,38 @@ button.t_answerBtn img{
     background:url(https://img.icons8.com/metro/26/000000/close-window.png);
     text-indent: -9999px;
     z-index: 100;
+}
+#tutorial_result_content img{
+    display: block;text-align: center; width: 100%; margin-bottom:3%;
+}
+.tutorial_content_imgABtn{
+    display: block; text-align: center; width: 100%; margin-bottom:2.3%;
+} 
+
+button.t_answerBtn{ 	
+    border:none;
+    background-color:transparent;
+    margin-bottom:1%;
+}
+button.t_answerBtn img{ 	
+    width : 100%;
+    height : 100%;
+}
+
+button.t_answerBBtn{
+    border:none;
+    background-color:transparent;
+    margin-bottom:4%;
+}
+button.t_answerBBtn img{ 	
+    width : 100%;
+    height : 100%;
+}
+#t3_correct{
+    width:10%;
+    height:5%;
+}
+#t4_correct{
+    width:10%;
+    height:5%;
 }
