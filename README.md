@@ -1,4 +1,6 @@
 # 대법원 국민재판 참여 컨텐츠 유형 검사 
+![test02](https://user-images.githubusercontent.com/55049159/203071781-7334169d-155d-4cfe-9c43-cd12d550e686.png)
+
 |열정적인배심원|배려하는배심원|
 |------|------|
 |![title_img01](https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png)|![title_img02](https://user-images.githubusercontent.com/55049159/201656793-0a9f4581-7956-4d4a-bf1e-c14efe4df17d.png)
