@@ -1,10 +1,9 @@
 
 let progressCnt = 1;
-let currentCnt;         // 뒤로가기 위함.
 let resultIndex = 1;        // 1 : 열정적인 배심원, 2 :배려하는 배심원 , 3: 논리적인 배심원, 4:공감하는 배심원 
 let resultCaculateArray = [0,0,0,0];
-let isCorrect = false;
-let before_tutorial_number;
+var testType = "1";
+
 window.onload = function()  {
     // 초기 size 세팅 
     var x = window.innerWidth;
@@ -32,6 +31,7 @@ window.onload = function()  {
 
 // 배심원 유형 테스트 시작버튼 실행시 
 $("#test01_btn").on("click", function(){
+    testType = "1";
     $('#header').css( 'display', '' );  // header 생성
     $(".dummy-header").css( 'height', '80px' ); // 더미헤더 height 변경
     $('#header_img').attr({ src:  "/assets/images/test01_header.png" });                    
@@ -41,6 +41,7 @@ $("#test01_btn").on("click", function(){
 
 // 국민참여재판 튜토리얼 시작버튼 실행시 
 $("#test02_btn").on("click", function(){
+    testType = "2";
     $('#header').css( 'display', '' );  // header 생성
     $(".dummy-header").css( 'height', '80px' ); // 더미헤더 height 변경
     $('#header_img').attr({ src:  "/assets/images/test02_header.png" });    
@@ -50,6 +51,7 @@ $("#test02_btn").on("click", function(){
 
 // A 버튼 클릭시 
 $("#answerABtn").on("click", function(){
+    selectedArray[progressCnt] = questions[progressCnt].answerAScore; // 뒤로가기위해 저장
     resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerAScore); //결과값 계산 
     if(progressCnt < 5){
         progressCnt++;                      // 진행 Cnt ++
@@ -62,9 +64,8 @@ $("#answerABtn").on("click", function(){
 
 // B 버튼 클릭시 
 $("#answerBBtn").on("click", function(){
-    //결과값 계산 
-    resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerBScore);
-
+    selectedArray[progressCnt] = questions[progressCnt].answerBScore; // 뒤로가기위해 저장
+    resultCaculateArray = arrayPlusArray( resultCaculateArray, questions[progressCnt].answerBScore); //결과값 계산 
     if(progressCnt < 5){
         progressCnt++;                      // 진행 Cnt ++
         setQuestionAndAnswer(progressCnt);  // 다음 버튼 img로 세팅 
@@ -73,6 +74,34 @@ $("#answerBBtn").on("click", function(){
         progressCnt = 0;
     }
 });
+
+
+// 뒤로가기 기능
+$("#back_img").on("click", function(){
+    console.log("init : " + resultIndex + " , " + progressCnt);
+    //[1] 배심원유형 테스트 
+    if(testType == "1"){
+        //첫문제일 경우 
+        if(progressCnt == 1){
+            location.reload(); //첫페이지로
+            return;
+        }  
+        resultIndex--;
+        progressCnt--;
+        resultCaculateArray = arrayMinusArray( resultCaculateArray, selectedArray[progressCnt]);
+         //결과값에서 빼주기
+        if(resultIndex == 5){
+            $('#back_img').css( 'display', 'none' );      
+        }
+        setQuestionAndAnswer(progressCnt);
+    }
+
+    //[1] 배심원유형 테스트 
+    else if(testType =="2"){
+
+    }
+});
+
 
 // QNA UI 세팅
 function setQuestionAndAnswer(progressCnt){
@@ -85,10 +114,6 @@ function setQuestionAndAnswer(progressCnt){
 //결과 세팅 
 function setResult(){
     resultIndex = searchMaxIndexArray(resultCaculateArray);//score 검사해서 세팅 
-    
-    sessionStorage.setItem("test", "01");           //배심원테스트
-    sessionStorage.setItem("result", resultIndex);  //결과값저장
-
     location.href = "result"+resultIndex+ ".html";
 }
 
@@ -101,7 +126,15 @@ function arrayPlusArray(arr1, arr2) {
     console.log("결과 arr1 [" + arr1 + "] + arr2 [" + arr2 + "] = " + newArr);
     return newArr;
 }
-
+// 뒤로가기 함수
+function arrayMinusArray(arr1, arr2) {
+    let newArr = [0,0,0,0];
+    for(let i in newArr) {
+        newArr[i] =  arr1[i] - arr2[i];
+    }
+    console.log("결과 arr1 [" + arr1 + "] + arr2 [" + arr2 + "] = " + newArr);
+    return newArr;
+}
 function searchMaxIndexArray(arr){5
     console.log(arr);
     const max = Math.max(...arr);
@@ -136,10 +169,6 @@ $("#t1_trueBtn").on("click", function(){
     }, 1000);
 });
 
-$("#t1_falseBtn").on("click", function(){
-    
-});
-
 // [2] 2번 문제 
 $("#t2_trueBtn").on("click", function(){
     const target = document.getElementById('t2_trueBtn'); // 요소의 id 값이 target이라 가정
@@ -149,12 +178,7 @@ $("#t2_trueBtn").on("click", function(){
     $('#t2_correct').css( 'top', targetTop );      
     $('#t2_correct').css( 'width', targetWidth ); 
     $('#t2_correct').css( 'display', '');
-    
     document.querySelector('#t2_modal').style.display ='block';
-});
-
-$("#t2_falseBtn").on("click", function(){
-
 });
 
 $("#t2_modal_closeBtn").on("click", function(){
@@ -225,23 +249,50 @@ $("#t5_modal_closeBtn").on("click", function(){
     location.href = "result.html";
 });
 
-// TODO : 추가중 기능 
-// 뒤로가기 기능
-$("#backBtn").on("click", function(){
-    console.log("init : " + resultIndex + " , " + progressCnt);
-    //첫문제일 경우 
-    if(progressCnt == 1){
-        location.reload(); //첫페이지로
-        return;
-    }  
-    //첫문제가 아닐 경우 
-    console.log("before : " + resultIndex + " , " + progressCnt);
-    resultIndex--;
-    progressCnt--;
-    console.log("after : " + resultIndex + " , " + progressCnt);
-
-    if(resultIndex == 5){
-        $('#backBtn').css( 'display', 'none' );      
+// 틀렸을 경우 모달
+function showIncorrectModal(index){
+    document.querySelector('#incorrect_modal').style.display ='block';
+       
+    if(index == 1) {
+        document.querySelector('#t1_trueBtn').disabled = true;
+        document.querySelector('#t1_falseBtn').disabled = true;
+        setTimeout(function() {
+            document.querySelector('#incorrect_modal').style.display ='none';
+            document.querySelector('#t1_trueBtn').disabled = false;
+            document.querySelector('#t1_falseBtn').disabled = false;
+        }, 1300);
+    } 
+    else if(index == 2){
+        console.log("b");
+        document.querySelector('#t2_trueBtn').disabled = true;
+        document.querySelector('#t2_falseBtn').disabled = true;
+        setTimeout(function() {
+            document.querySelector('#incorrect_modal').style.display ='none';
+            document.querySelector('#t2_trueBtn').disabled = false;
+            document.querySelector('#t2_falseBtn').disabled = false;
+        }, 1300);
     }
-    setQuestionAndAnswer(progressCnt);
-});
+    else if(index == 3){
+        document.querySelector('#t3_btn3').disabled = true;
+        setTimeout(function() {
+            document.querySelector('#incorrect_modal').style.display ='none';
+            document.querySelector('#t3_btn3').disabled = false;
+        }, 1300);
+    }
+    else if(index == 4){
+        document.querySelector('#t4_btn3').disabled = true;
+        setTimeout(function() {
+            document.querySelector('#incorrect_modal').style.display ='none';
+            document.querySelector('#t4_btn3').disabled = false;
+        }, 1300);
+    }
+    else if(index == 5){
+        document.querySelector('#t5_trueBtn').disabled = true;
+        document.querySelector('#t5_falseBtn').disabled = true;
+        setTimeout(function() {
+            document.querySelector('#incorrect_modal').style.display ='none';
+            document.querySelector('#t5_trueBtn').disabled = false;
+            document.querySelector('#t5_falseBtn').disabled = false;
+        }, 1300);
+    }
+} 

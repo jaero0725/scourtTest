@@ -89,3 +89,12 @@ const kakaoTitleImg = {
         src : "https://user-images.githubusercontent.com/55049159/201656843-da5c5a5b-2522-4ec2-82d1-3838abe8e78e.png"
     }
 }
+
+// 뒤로가기 위해, 고른 답안 저장 
+var selectedArray = {
+    1 : [0,0,0,0],
+    2 : [0,0,0,0],
+    3 : [0,0,0,0],
+    4 : [0,0,0,0],
+    5 : [0,0,0,0]
+}

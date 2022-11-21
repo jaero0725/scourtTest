@@ -88,6 +88,11 @@ button.answerBtn:focus{
 #header_img{
     margin-top:3%;
 }
+#back_img{
+    
+    width: 180%;
+    height: 180%;
+}
 .question_content_img{
     display: block;text-align: center; width: 100%; margin-bottom:8%;
 } 
@@ -141,16 +146,25 @@ button.t_answerBtn img{
     display: block;
     width:80%; 
 } 
-
-#shareTitle{
-    width:20%;
+#reset{
+    width:50%;
     margin: auto;
-    margin-top:10%;
-    margin-bottom:3%;
+    margin-top:5%;
+    margin-bottom:1%;
 }
-#shareTitleSrc{
+#resetImg{
     width:100%;
     height:100%;
+}
+#shareTitle{
+    width:30%;
+    margin: auto;
+    margin-top:4%;
+    margin-bottom:4%;
+}
+#shareTitleSrc{
+    width:60%;
+    height:60%;
 }
 #share {
     width:100%;
@@ -176,7 +190,6 @@ button.t_answerBtn img{
     margin: -50% 0 0 -50%;
     z-index: 100;
 }
-
 .modal_close{
     width: 26px;
     height: 26px;
@@ -185,12 +198,10 @@ button.t_answerBtn img{
     right: 15px;
     z-index: 100;
 }
-.modal_close> a{
+.modal_close > img{
     display: block;
     width: 100%;
     height: 100%;
-    background:url(https://img.icons8.com/metro/26/000000/close-window.png);
-    text-indent: -9999px;
     z-index: 100;
 }
 #tutorial_result_content img{
