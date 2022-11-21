@@ -1,6 +1,7 @@
 
 let progressCnt = 1;
 let resultIndex = 1;        // 1 : 열정적인 배심원, 2 :배려하는 배심원 , 3: 논리적인 배심원, 4:공감하는 배심원 
+let tProgressindex = 0;
 let resultCaculateArray = [0,0,0,0];
 var testType = "1";
 
@@ -44,9 +45,12 @@ $("#test02_btn").on("click", function(){
     testType = "2";
     $('#header').css( 'display', '' );  // header 생성
     $(".dummy-header").css( 'height', '80px' ); // 더미헤더 height 변경
-    $('#header_img').attr({ src:  "/assets/images/test02_header.png" });    
+    $('#header_img').attr({ src:  "/assets/images/test02_header.png" });  
+    $('#header_img').css( 'height', '160%' );  
+    $('#header_img').css( 'width', '160%' );     
     $('#intro_content').css( 'display', 'none' ); 
     $('#tutorial_content').css( 'display', '' ); 
+    tProgressindex = 1;
 });
 
 // A 버튼 클릭시 
@@ -78,7 +82,6 @@ $("#answerBBtn").on("click", function(){
 
 // 뒤로가기 기능
 $("#back_img").on("click", function(){
-    console.log("init : " + resultIndex + " , " + progressCnt);
     //[1] 배심원유형 테스트 
     if(testType == "1"){
         //첫문제일 경우 
@@ -98,10 +101,16 @@ $("#back_img").on("click", function(){
 
     //[1] 배심원유형 테스트 
     else if(testType =="2"){
-
+        console.log("tProgressindex" + tProgressindex);
+        if(tProgressindex == 1){
+            location.reload(); //첫페이지로
+            return;
+        }  
+        $("#t"+tProgressindex).css( 'display', 'none');             
+        $("#t"+parseInt(tProgressindex-1)).css( 'display', '');
+        tProgressindex--;
     }
 });
-
 
 // QNA UI 세팅
 function setQuestionAndAnswer(progressCnt){
@@ -148,7 +157,6 @@ function searchMaxIndexArray(arr){5
 - 문제별로 함수 만듦
 ################################
 */
-
 // [1] 1번 문제 
 $("#t1_trueBtn").on("click", function(){
     //정답 button위치 찾기
@@ -160,12 +168,15 @@ $("#t1_trueBtn").on("click", function(){
     $('#t1_correct').css( 'width', targetWidth ); 
     $('#t1_correct').css( 'display', '');
     
+    
+
     setTimeout(function() {
         //본격적인 튜토리얼 시작 
         console.log("국민참여재판 절차안내 튜토리얼 start");
         $('#t1_correct').css( 'display', 'none');
         $("#t1").css( 'display', 'none');             
         $("#t2").css( 'display', '');
+        tProgressindex = 2;
     }, 1000);
 });
 
@@ -182,10 +193,11 @@ $("#t2_trueBtn").on("click", function(){
 });
 
 $("#t2_modal_closeBtn").on("click", function(){
-    document.querySelector('.modal_wrap').style.display ='none';
+    document.querySelector('#t2_modal').style.display ='none';
     $('#t2_correct').css( 'display', 'none');
     $("#t2").css( 'display', 'none');        
     $("#t3").css( 'display', '');
+    tProgressindex = 3;
 });
 
 // [3] 3번 문제 
@@ -204,10 +216,11 @@ $("#t3_btn3").on("click", function(){
 });
 
 $("#t3_modal_closeBtn").on("click", function(){
-    document.querySelector('.modal_wrap').style.display ='none';
+    document.querySelector('#t3_modal').style.display ='none';
     $('#t3_correct').css( 'display', 'none');
     $("#t3").css( 'display', 'none');        
     $("#t4").css( 'display', '');
+    tProgressindex = 4;
 });
 
 // [4] 4번 문제 
@@ -225,10 +238,11 @@ $("#t4_btn3").on("click", function(){
     document.querySelector('#t4_modal').style.display ='block';
 });
 $("#t4_modal_closeBtn").on("click", function(){
-    document.querySelector('.modal_wrap').style.display ='none';
+    document.querySelector('#t4_modal').style.display ='none';
     $('#t4_correct').css( 'display', 'none');
     $("#t4").css( 'display', 'none');        
     $("#t5").css( 'display', '');
+    tProgressindex = 5;
 });
 
 // [5] 5번 문제 
@@ -249,10 +263,9 @@ $("#t5_modal_closeBtn").on("click", function(){
     location.href = "result.html";
 });
 
-// 틀렸을 경우 모달
+// 틀렸을 경우 모달 
 function showIncorrectModal(index){
     document.querySelector('#incorrect_modal').style.display ='block';
-       
     if(index == 1) {
         document.querySelector('#t1_trueBtn').disabled = true;
         document.querySelector('#t1_falseBtn').disabled = true;
