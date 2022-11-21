@@ -87,11 +87,11 @@ button.answerBtn:focus{
 }
 #header_img{
     margin-top:3%;
+    margin-bottom:3%;
 }
 #back_img{
-    
-    width: 180%;
-    height: 180%;
+    margin-top:3%;
+    margin-bottom:3%;
 }
 .question_content_img{
     display: block;text-align: center; width: 100%; margin-bottom:8%;
@@ -113,17 +113,8 @@ button.t_answerBtn img{
     width : 100%;
     height : 100%;
 }
-#backBtn{
-    border:none;
-    background-color:transparent;
-    margin-bottom:1%;
-    width : 30px;
-    height : 30px;
-}
-#back_img{
-    width : 100%;
-    height : 100%;
-}
+
+
 #dummy{
     width:15%;
 }
