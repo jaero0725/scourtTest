@@ -2,7 +2,7 @@
 
 
 ### 1) 배심원 유형테스트
-![test01](https://user-images.githubusercontent.com/55049159/203072292-e3920e63-5076-4122-beab-2debbb32c144.png)
+<img src="https://user-images.githubusercontent.com/55049159/203072292-e3920e63-5076-4122-beab-2debbb32c144.png" width="400" height="300"/>
 <br>
 
 |열정적인배심원|배려하는배심원|
@@ -16,7 +16,7 @@
 - 질문지 / 답안 / 결과 작성 
 
 ### 2) 국민참여재판 튜토리얼
-![test02](https://user-images.githubusercontent.com/55049159/203072245-5c6c7848-1bf6-4a6b-922d-3a975e0ab278.png)
+<img src="https://user-images.githubusercontent.com/55049159/203072245-5c6c7848-1bf6-4a6b-922d-3a975e0ab278.png" width="400" height="300"/>
 <br>
 
 ## 개발환경
