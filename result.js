@@ -67,7 +67,7 @@ $("#kakaoBtn2").on("click", function(){
       content: {
         title: '국민참여재판이란 뭘까?',
         imageUrl:
-          kakaoImgSrc,
+          "https://user-images.githubusercontent.com/55049159/203071781-7334169d-155d-4cfe-9c43-cd12d550e686.png",
         link: {
           mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result.html',
           webUrl: 'https://leafy-empanada-b0c97b.netlify.app//result.html',
