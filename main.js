@@ -107,11 +107,15 @@ $("#back_img").on("click", function(){
             location.reload(); //첫페이지로
             return;
         }  
+
+        tutorial_init();    // 각문제 초기화 
+
         $("#t"+tProgressindex).css( 'display', 'none');             
         $("#t"+parseInt(tProgressindex-1)).css( 'display', '');
         tProgressindex--;
     }
 });
+
 
 // QNA UI 세팅
 function setQuestionAndAnswer(progressCnt){
@@ -269,6 +273,7 @@ $("#t5_modal_closeBtn").on("click", function(){
 // 틀렸을 경우 모달 
 function showIncorrectModal(index){
     document.querySelector('#incorrect_modal').style.display ='block';
+    
     if(index == 1) {
         document.querySelector('#t1_trueBtn').disabled = true;
         document.querySelector('#t1_falseBtn').disabled = true;
@@ -290,8 +295,6 @@ function showIncorrectModal(index){
     }
     else if(index == 3){
         document.querySelector('#t3_btn3').disabled = true;
-        $("#t3_btn3").css( 'display', '');        
-        $("#t3_btn3_correct").css( 'display', 'none');
         setTimeout(function() {
             document.querySelector('#incorrect_modal').style.display ='none';
             document.querySelector('#t3_btn3').disabled = false;
@@ -314,3 +317,22 @@ function showIncorrectModal(index){
         }, 1300);
     }
 } 
+
+function tutorial_init(){
+    $("#t1_correct").css( 'display', 'none');
+    $("#t2_correct").css( 'display', 'none');
+    $("#t3_correct").css( 'display', 'none');
+    $("#t4_correct").css( 'display', 'none');
+    $("#t5_correct").css( 'display', 'none');
+
+    $("#t3_btn3").css( 'display', '');        
+    $("#t3_btn3_correct").css( 'display', 'none');
+
+    $("#t4_btn3").css( 'display', '');        
+    $("#t4_btn3_correct").css( 'display', 'none');
+
+    $("#t2_modal").css( 'display', 'none');
+    $("#t3_modal").css( 'display', 'none');
+    $("#t4_modal").css( 'display', 'none');
+    $("#t5_modal").css( 'display', 'none');
+}
