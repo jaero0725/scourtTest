@@ -18,7 +18,7 @@
 
 ## 개발환경
 - 개발언어 : html, css, javascript/JQuery + Bootstrap
-- 테스트용 : netlify 
+- 개발서버 : netlify 
 - 정정서버 : AWS S3
 
 ## 개발기간 
