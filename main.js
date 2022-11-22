@@ -169,13 +169,14 @@ $("#t1_trueBtn").on("click", function(){
     $('#t1_correct').css( 'display', '');
     
     
-
+    document.querySelector('#t1_falseBtn').disabled = true;
     setTimeout(function() {
         //본격적인 튜토리얼 시작 
         console.log("국민참여재판 절차안내 튜토리얼 start");
         $('#t1_correct').css( 'display', 'none');
         $("#t1").css( 'display', 'none');             
         $("#t2").css( 'display', '');
+        document.querySelector('#t1_falseBtn').disabled = false;
         tProgressindex = 2;
     }, 1000);
 });
@@ -220,6 +221,7 @@ $("#t3_modal_closeBtn").on("click", function(){
     $('#t3_correct').css( 'display', 'none');
     $("#t3").css( 'display', 'none');        
     $("#t4").css( 'display', '');
+    
     tProgressindex = 4;
 });
 
