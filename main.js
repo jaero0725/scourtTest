@@ -46,8 +46,8 @@ $("#test02_btn").on("click", function(){
     $('#header').css( 'display', '' );  // header 생성
     $(".dummy-header").css( 'height', '80px' ); // 더미헤더 height 변경
     $('#header_img').attr({ src:  "/assets/images/test02_header.png" });  
-    $('#header_img').css( 'height', '80%' );  
-    //$('#header_img').css( 'width', '80%' );     
+   // $('#header_img').css( 'height', '80%' );  
+    $('#header_img_wrap').css( 'padding', '0' );     
     $('#intro_content').css( 'display', 'none' ); 
     $('#tutorial_content').css( 'display', '' ); 
     tProgressindex = 1;
