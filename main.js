@@ -289,6 +289,8 @@ function showIncorrectModal(index){
     }
     else if(index == 3){
         document.querySelector('#t3_btn3').disabled = true;
+        $("#t3_btn3").css( 'display', '');        
+        $("#t3_btn3_correct").css( 'display', 'none');
         setTimeout(function() {
             document.querySelector('#incorrect_modal').style.display ='none';
             document.querySelector('#t3_btn3').disabled = false;
