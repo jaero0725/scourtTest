@@ -8,7 +8,7 @@ const questions = {
         answerAImageSrc : quesationsImageSrc + "01/question01_A.png",
         answerAScore : [1,-1,3,-3],
         answerBImageSrc : quesationsImageSrc + "01/question01_B.png",
-        answerBScore : [-1,1,-3,4],
+        answerBScore : [-1,1,-3,4.5],
     },
     2 : {
         title : "토론에 참여할때 당신은 어떤 편에 가까운가요??",
@@ -24,7 +24,7 @@ const questions = {
         questionImageSrc : quesationsImageSrc + "03/question03.png", 
         titleImageSrc : quesationsImageSrc + "03/question03_img.png",
         answerAImageSrc : quesationsImageSrc + "03/question03_A.png",
-        answerAScore : [-1,3,-3,1],
+        answerAScore : [-1,3,-3,2],
         answerBImageSrc : quesationsImageSrc + "03/question03_B.png",
         answerBScore : [1,-3,3,-1],
     },
