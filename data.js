@@ -8,7 +8,7 @@ const questions = {
         answerAImageSrc : quesationsImageSrc + "01/question01_A.png",
         answerAScore : [1,-1,3,-3],
         answerBImageSrc : quesationsImageSrc + "01/question01_B.png",
-        answerBScore : [-1,1,-3,3],
+        answerBScore : [-1,1,-3,4],
     },
     2 : {
         title : "토론에 참여할때 당신은 어떤 편에 가까운가요??",
