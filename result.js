@@ -2,8 +2,6 @@
     공유하기 기능 함수
 */
 const url = encodeURI(window.location.href);
-var test = sessionStorage.getItem("test");
-var resultIndex = sessionStorage.getItem("result"); 
 var pageId = "";
 var kakaoImgSrc = "https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png"
 window.onload = function()  {
