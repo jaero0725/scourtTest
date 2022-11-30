@@ -136,6 +136,9 @@ function arrayPlusArray(arr1, arr2) {
     for(let i in newArr) {
         newArr[i] =  arr1[i] + arr2[i];
     }
+    if(progressCnt ==5 ){
+        alert("결과 arr1 [" + arr1 + "] + arr2 [" + arr2 + "] = " + newArr);
+    }
     console.log("결과 arr1 [" + arr1 + "] + arr2 [" + arr2 + "] = " + newArr);
     return newArr;
 }
@@ -336,3 +339,5 @@ function tutorial_init(){
     $("#t4_modal").css( 'display', 'none');
     $("#t5_modal").css( 'display', 'none');
 }
+
+
