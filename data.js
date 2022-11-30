@@ -33,9 +33,9 @@ const questions = {
         questionImageSrc : quesationsImageSrc + "04/question04.png", 
         titleImageSrc : quesationsImageSrc + "04/question04_img.png",
         answerAImageSrc : quesationsImageSrc + "04/question04_A.png",
-        answerAScore : [2.4,-2.4,-1.1, 1.4],
+        answerAScore : [2.4,-1,-1.1, 1.1],
         answerBImageSrc : quesationsImageSrc + "04/question04_B.png",
-        answerBScore : [-1.4,1.2,1,-0.3],
+        answerBScore : [-1.4,1.2,1,-0.5],
     },
     5 : {
         title : "상대방에게 필요한 조언을 해야 할 상황일 경우, 당신의 생각은?",
