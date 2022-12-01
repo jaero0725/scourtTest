@@ -19,7 +19,6 @@
 ## 개발환경
 - 개발언어 : html, css, javascript/JQuery + Bootstrap
 - 개발서버 : netlify 
-- 운영서버 : AWS S3
 
 ## 개발기간 
 - 2022.11.08 ~ 2022.11.23
