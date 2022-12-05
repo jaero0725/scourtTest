@@ -63,7 +63,7 @@ $("#kakaoBtn2").on("click", function(){
   Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-        title: '국민참여재판은 어떻게 진행되는 걸까? \n 국민참여재판 진행 절차에 대해 알아보세요.',
+        title: '국민참여재판은 어떻게 진행되는 걸까?\n국민참여재판 진행 절차에 대해 알아보세요.',
         imageUrl:
           "https://user-images.githubusercontent.com/55049159/203071781-7334169d-155d-4cfe-9c43-cd12d550e686.png",
         link: {
