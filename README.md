@@ -13,7 +13,7 @@
 - 질문지 / 답안 / 결과 작성 
 
 ### 2) 국민참여재판 튜토리얼
-<img src="https://user-images.githubusercontent.com/55049159/203072245-5c6c7848-1bf6-4a6b-922d-3a975e0ab278.png" width="440" height="300"/>
+<img src="https://user-images.githubusercontent.com/55049159/205935949-d6649b22-7221-4481-836b-6d6979f0a68c.png" width="440" height="300"/>
 <br>
 
 ## 개발환경
