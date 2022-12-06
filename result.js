@@ -65,7 +65,7 @@ $("#kakaoBtn2").on("click", function(){
       content: {
         title: '국민참여재판은 어떻게 진행되는 걸까?\n국민참여재판 진행 절차에 대해 알아보세요.',
         imageUrl:
-          "https://user-images.githubusercontent.com/55049159/203071781-7334169d-155d-4cfe-9c43-cd12d550e686.png",
+          "https://user-images.githubusercontent.com/55049159/205935949-d6649b22-7221-4481-836b-6d6979f0a68c.png",
         link: {
           mobileWebUrl: 'https://leafy-empanada-b0c97b.netlify.app/result.html',
           webUrl: 'https://leafy-empanada-b0c97b.netlify.app//result.html',
