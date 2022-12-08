@@ -10,11 +10,12 @@
 |------|------|
 |![title_img03](https://user-images.githubusercontent.com/55049159/201656819-403a5853-fd3d-45c7-8962-385bfd782d5b.png)|![title_img04](https://user-images.githubusercontent.com/55049159/201656843-da5c5a5b-2522-4ec2-82d1-3838abe8e78e.png)
 - 성격유형테스트 형식
-- 질문지 / 답안 / 결과 작성 
+
 
 ### 2) 국민참여재판 튜토리얼
 <img src="https://user-images.githubusercontent.com/55049159/205935949-d6649b22-7221-4481-836b-6d6979f0a68c.png" width="440" height="300"/>
 <br>
+- 질문지 / 답안 / 결과 작성 
 
 ## 개발환경
 - 개발언어 : html, css, javascript/JQuery + Bootstrap
