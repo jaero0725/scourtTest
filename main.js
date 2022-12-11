@@ -197,6 +197,7 @@ $("#t1_trueBtn").on("click", function(){
         $("#t2").css( 'display', '');
         document.querySelector('#t1_falseBtn').disabled = false;
         tProgressindex = 2;
+        targetTop2  = document.getElementById('t2_trueBtn').getBoundingClientRect().top;
     }, 1000);
 });
 
@@ -206,7 +207,6 @@ $("#t2_trueBtn").on("click", function(){
     $('#t2_correct').css( 'top', targetTop2 );      
     $('#t2_correct').css( 'width', targetWidth2 ); 
     $('#t2_correct').css( 'display', '');
-
     document.querySelector('#t2_modal').style.display ='block';
 });
 
@@ -222,11 +222,8 @@ $("#t2_modal_closeBtn").on("click", function(){
 $("#t3_btn3").on("click", function(){
     $("#t3_btn3").css( 'display', 'none');        
     $("#t3_btn3_correct").css( 'display', '');
-
-    console.log("# targetTop3 " + targetTop3);
     $('#t3_correct').css( 'top', targetTop3 ); 
     $('#t3_correct').css( 'display', '');
-    
     document.querySelector('#t3_modal').style.display ='block';
 });
 
