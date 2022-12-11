@@ -23,11 +23,6 @@ window.onload = function()  {
         backgrond.style.width = "500px";
         content.style.width = "500px";
     }
-    //questions 세팅 
-    $('#question-step_question-title').attr({ src: questions[progressCnt].questionImageSrc });  // questionImageSrc 세팅
-    $('#question-step_question-image').attr({ src: questions[progressCnt].titleImageSrc });     // titleImageSrc 세팅 
-    $('#answerAImageSrc').attr({ src: questions[progressCnt].answerAImageSrc });                // answerAImageSrc 세팅
-    $('#answerBImageSrc').attr({ src: questions[progressCnt].answerBImageSrc });                // answerBImageSrc 세팅
 }
 
 // 배심원 유형 테스트 시작버튼 실행시 
@@ -38,6 +33,12 @@ $("#test01_btn").on("click", function(){
     $('#header_img').attr({ src:  "/assets/images/test01_header.png" });                    
     $('#intro_content').css( 'display', 'none' ); 
     $('#question_content').css( 'display', '' ); 
+
+     //questions 세팅 
+     $('#question-step_question-title').attr({ src: questions[progressCnt].questionImageSrc });  // questionImageSrc 세팅
+     $('#question-step_question-image').attr({ src: questions[progressCnt].titleImageSrc });     // titleImageSrc 세팅 
+     $('#answerAImageSrc').attr({ src: questions[progressCnt].answerAImageSrc });                // answerAImageSrc 세팅
+     $('#answerBImageSrc').attr({ src: questions[progressCnt].answerBImageSrc });                // answerBImageSrc 세팅
 });
 
 // 국민참여재판 튜토리얼 시작버튼 실행시 
