@@ -11,16 +11,13 @@ window.onload = function()  {
     var y = window.innerHeight;
 
     var header    = document.getElementById("header");
-    var backgrond = document.getElementById("backgrond");
     var content   = document.getElementById("content");
 
     if(x <= 500){
             header.style.width    = x +"px";
-            backgrond.style.width = x +"px";
             content.style.width   = x +"px";
     } else{
         header.style.width = "500px";
-        backgrond.style.width = "500px";
         content.style.width = "500px";
     }
 }
@@ -158,17 +155,39 @@ function searchMaxIndexArray(arr){5
 - 문제별로 함수 만듦
 ################################
 */
+var targetTop1;
+var targetTop2;
+var targetTop3;
+var targetTop4;
+var targetTop5;
+
+document.addEventListener('click', function() {
+     targetTop1  = document.getElementById('t1_trueBtn').getBoundingClientRect().top;
+     targetTop2  = document.getElementById('t2_trueBtn').getBoundingClientRect().top;
+     targetTop3  = document.getElementById('t3_btn3').getBoundingClientRect().top;
+     targetTop4  = document.getElementById('t4_btn3').getBoundingClientRect().top;
+     targetTop5  = document.getElementById('t5_trueBtn').getBoundingClientRect().top;
+});
+
+document.addEventListener('scroll', function() {
+    var currentScrollValue = document.documentElement.scrollTop;
+
+    targetTop1  = document.getElementById('t1_trueBtn').getBoundingClientRect().top + currentScrollValue;
+    targetTop2  = document.getElementById('t2_trueBtn').getBoundingClientRect().top + currentScrollValue;
+    targetTop3  = document.getElementById('t3_btn3').getBoundingClientRect().top + currentScrollValue;
+    targetTop4  = document.getElementById('t4_btn3').getBoundingClientRect().top + currentScrollValue;
+    targetTop5  = document.getElementById('t5_trueBtn').getBoundingClientRect().top + currentScrollValue;
+
+    console.log("c targetTop3 " + targetTop3 + ", " + currentScrollValue);
+});
+
 // [1] 1번 문제 
 $("#t1_trueBtn").on("click", function(){
-    //정답 button위치 찾기
-    const target = document.getElementById('t1_trueBtn'); // 요소의 id 값이 target이라 가정
-    const targetWidth = $("#t1_trueBtn").width();
-    const targetTop  = target.getBoundingClientRect().top;
+    let targetWidth1 = $("#t1_trueBtn").width();
  
-    $('#t1_correct').css( 'top', targetTop );      
-    $('#t1_correct').css( 'width', targetWidth ); 
+    $('#t1_correct').css( 'top', targetTop1 );      
+    $('#t1_correct').css( 'width', targetWidth1 ); 
     $('#t1_correct').css( 'display', '');
-    
     
     document.querySelector('#t1_falseBtn').disabled = true;
     setTimeout(function() {
@@ -183,13 +202,11 @@ $("#t1_trueBtn").on("click", function(){
 
 // [2] 2번 문제 
 $("#t2_trueBtn").on("click", function(){
-    const target = document.getElementById('t2_trueBtn'); // 요소의 id 값이 target이라 가정
-    const targetWidth = $("#t2_trueBtn").width();
-    const targetTop  = target.getBoundingClientRect().top;
- 
-    $('#t2_correct').css( 'top', targetTop );      
-    $('#t2_correct').css( 'width', targetWidth ); 
+    let targetWidth2 = $("#t2_trueBtn").width();
+    $('#t2_correct').css( 'top', targetTop2 );      
+    $('#t2_correct').css( 'width', targetWidth2 ); 
     $('#t2_correct').css( 'display', '');
+
     document.querySelector('#t2_modal').style.display ='block';
 });
 
@@ -206,11 +223,8 @@ $("#t3_btn3").on("click", function(){
     $("#t3_btn3").css( 'display', 'none');        
     $("#t3_btn3_correct").css( 'display', '');
 
-    const target = document.getElementById('t3_btn3_correct'); 
-    const targetWidth = $("#t3_btn3_correct").width();
-    const targetTop  = target.getBoundingClientRect().top - 5;
- 
-    $('#t3_correct').css( 'top', targetTop ); 
+    console.log("# targetTop3 " + targetTop3);
+    $('#t3_correct').css( 'top', targetTop3 ); 
     $('#t3_correct').css( 'display', '');
     
     document.querySelector('#t3_modal').style.display ='block';
@@ -230,11 +244,9 @@ $("#t4_btn3").on("click", function(){
     $("#t4_btn3").css( 'display', 'none');        
     $("#t4_btn3_correct").css( 'display', '');
 
-    const target = document.getElementById('t4_btn3_correct'); 
-    const targetWidth = $("#t4_btn3_correct").width();
-    const targetTop  = target.getBoundingClientRect().top - 5;
+    let targetWidth = $("#t4_btn3_correct").width();
  
-    $('#t4_correct').css( 'top', targetTop ); 
+    $('#t4_correct').css( 'top', targetTop4 ); 
     $('#t4_correct').css( 'display', '');
     
     document.querySelector('#t4_modal').style.display ='block';
@@ -249,12 +261,10 @@ $("#t4_modal_closeBtn").on("click", function(){
 
 // [5] 5번 문제 
 $("#t5_trueBtn").on("click", function(){
-    const target = document.getElementById('t5_trueBtn'); // 요소의 id 값이 target이라 가정
-    const targetWidth = $("#t5_trueBtn").width();
-    const targetTop  = target.getBoundingClientRect().top;
+    let targetWidth5 = $("#t5_trueBtn").width();
  
-    $('#t5_correct').css( 'top', targetTop );      
-    $('#t5_correct').css( 'width', targetWidth ); 
+    $('#t5_correct').css( 'top', targetTop5 );      
+    $('#t5_correct').css( 'width', targetWidth5 ); 
     $('#t5_correct').css( 'display', '');
     
     document.querySelector('#t5_modal').style.display ='block';
