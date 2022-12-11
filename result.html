@@ -17,18 +17,9 @@
     <form>
         <input id="pageId" name="pageId" value=""  hidden />
     </form>
-    <div id="next">
         <div class="Toastify"></div>
-        <div class="common_container">
-            <!-- 배경 -->
-            <div id ="backgrond" style="position:fixed;left:50%;top:0;bottom:0;transform:translateX(-50%); max-width: 500px;
-            background-position: center center;
-            background-size:cover;height:100%;
-            background-repeat:repeat-y;;
-            background-image: url( '/assets/images/background.png' ); background-size: 100%;">
-            <div style="position: relative; flex: 1 1 0%;">
-                <div style="width:100%; margin-top: 0px; padding-bottom: 34px; overflow: auto;  min-height: 100vh; 
-                    overflow:scroll; overflow-x:hidden;">
+        <div style="width:100%; margin-top: 0px; padding-bottom: 34px;  min-height: 100vh; 
+             overflow:scroll; overflow-x:hidden;">
                     <div style="position: fixed;  height: 40px; transform: translateX(-50%) scale(1); transform-origin: center top; left: 50%; z-index: 1;">
                         <div id="header" style="height: 50px; background-color: rgb(199, 176, 155); text-align: center;align-items: center;">
                             <div class="row" style="width:100%;height:100%;margin-right:0px;margin-left:0px;align-items: center;">
@@ -42,7 +33,17 @@
                             </div> 
                         </div>
                     </div>
-                    <div id="content" class="content" style="max-height: 500px; max-width: 500px;"> <!-- 기종 사이즈에 맞춰서 변경 -->
+
+                    <div id="content" class="content" 
+                        style="position: relative; max-width: 500px;
+                        transform: translateX(-50%) scale(1); transform-origin: center top; left: 50%;
+                        background-position: center center;
+                        background-size:cover;
+                        background-image: url( '/assets/images/background.png' );
+                        background-repeat:repeat-y;
+                        ">
+
+                        <!-- 기종 사이즈에 맞춰서 변경 -->
                             <div class="dummy-header" style="height:80px;max-width: 500px;"></div>
                             <div class="page-slide-wrap">
                                 <div class="page-slide slide-off-enter-done">
@@ -70,12 +71,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
-                </div>
             </div>
         </div>
-    </div>
+
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.1/kakao.min.js"
     integrity="sha384-eKjgHJ9+vwU/FCSUG3nV1RKFolUXLsc6nLQ2R1tD0t4YFPCvRmkcF8saIfOZNWf/" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
