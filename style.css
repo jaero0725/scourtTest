@@ -31,7 +31,21 @@ body {
 ::-webkit-scrollbar {
      display: none;
 }
-   
+.grb{
+    width:100%; margin-top: 0px;min-height: 100vh; 
+    overflow:scroll; overflow-x:hidden;
+}
+.content{
+    position: relative; max-width: 500px;
+    transform: translateX(-50%) scale(1); 
+    transform-origin: center top; left: 50%;
+    background-position: center center;
+    background-size:cover;
+    background-image: url( '/assets/images/background.png' );
+    background-repeat:repeat-y;
+}
+
+
 ol, ul {
 	list-style: none;
 }
