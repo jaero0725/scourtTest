@@ -1,24 +1,11 @@
 /*
     공유하기 기능 함수
 */
-
-$(function(){
-	$(document).mousedown(function( e ){
-    console.log(e);
-    $("#content").focus();
-
-	});
-});
-
-const target = document.querySelector('#content');
-const hasScroll = target.scrollHeight > target.offsetHeight
-  console.log(hasScroll)
 const url = encodeURI(window.location.href);
 var pageId = "";
 var kakaoImgSrc = "https://user-images.githubusercontent.com/55049159/201449154-3b91d106-9a07-488b-b163-95e5eed842bb.png"
 window.onload = function()  {
-  pageId = document.getElementById('pageId').value;
-  Kakao.init('06dd1f2514881e17de053dde9e87cc67');
+   Kakao.init('06dd1f2514881e17de053dde9e87cc67');
 
     var x = window.innerWidth;
     var y = window.innerHeight;
@@ -36,7 +23,6 @@ window.onload = function()  {
         backgrond.style.width = "500px";
         content.style.width = "500px";
     }
-    console.log("pageId" + pageId);
 }
 
 // kakao 공유하기 - 카카오톡 공유 API
