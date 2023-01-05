@@ -11,7 +11,7 @@
 - 개발언어 : html, css, javascript/JQuery + Bootstrap
 - 정적서버 : netlify 
 
-### :date: 
+### :date: 일정
 - 개발기간 : 2022.11.08 ~ 2022.11.23
 - 결함수정 : 2022.11.24 ~ 2022.12.31
 
