@@ -1,5 +1,7 @@
 # 대법원 국민재판 참여 컨텐츠 유형 검사 
 
+<a href="https://www.xn--3e0b39ycphhxbiwjool.kr/summary/intro.php">국민참여재판 소개 사이트<a/>
+
 
 ### 1) 배심원 유형테스트
 |열정적인배심원|배려하는배심원|
