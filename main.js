@@ -178,7 +178,6 @@ document.addEventListener('scroll', function() {
     targetTop4  = document.getElementById('t4_btn3').getBoundingClientRect().top + currentScrollValue;
     targetTop5  = document.getElementById('t5_trueBtn').getBoundingClientRect().top + currentScrollValue;
 
-    console.log("c targetTop3 " + targetTop3 + ", " + currentScrollValue);
 });
 
 // [1] 1번 문제 
